@@ -1,0 +1,421 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="迟云秋">
+  
+  
+  
+  
+    <meta name="description" content="title ：hive
+hive的基本思想
+hive是基于Hadoop的一个数据仓库工具(离线)，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。    hadoop处理结构化数据的数据仓库    不是关系型数据库，不适合OLTP在线事务处理，例如银行    不适合实时查询和行级更新。    总结：hive具有sql数据库的外表，但应用场景完全不同，hive只适合用来做批量...">
+  
+  <title>Spark基础 [ yunqiu.blog ]</title>
+  
+  
+    <link rel="shortcut icon" href="/hollow.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2019/05/27/spark总结/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        spark
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2019/05/27/hbase/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        hadoop
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onclick="openUserCard()">
+          <img id="avatar" src="https://github.com/guduchi/iamge.github.io/blob/master/timg.jpg?raw=true">
+          <div id="homelink">yunqiu.blog</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">首页</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">归档</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">标签</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">分类</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">介绍</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/guduchi">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  
+
+  <article id="post">
+    <h1>Spark基础</h1>
+    <p class="page-title-sub">
+      <span id="post-title-date">撰写于 2019-05-27</span>
+      
+        <span id="post-title-updated">修改于 2019-03-08</span>
+      
+      
+      <span id="post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/web前端/">web前端</a>
+      
+      </span>
+      
+      
+      <span id="post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/jQuery/">jQuery</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/表格/">表格</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/表单验证/">表单验证</a>
+      
+      </span>
+      
+    </p>
+    
+    <p>title ：hive</p>
+<p>hive的基本思想</p>
+<p>hive是基于Hadoop的一个数据仓库工具(离线)，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。<br>    hadoop处理结构化数据的数据仓库<br>    不是关系型数据库，不适合OLTP在线事务处理，例如银行<br>    不适合实时查询和行级更新。<br>    总结：hive具有sql数据库的外表，但应用场景完全不同，hive只适合用来做批量数据统计分析</p>
+<ol>
+<li><p>Hive的特点</p>
+<p>可扩展<br>Hive可以自由的扩展集群的规模，一般情况下不需要重启服务。</p>
+<p>延展性<br> Hive支持用户自定义函数，用户可以根据自己的需求来实现自己的函数。</p>
+<p>容错<br> 良好的容错性，节点出现问题SQL仍可完成执行。</p>
+</li>
+<li><p>启动服务</p>
+<p>nohup bin/hiveserver2 1&gt;/dev/null 2&gt;&amp;1 &amp;    后台启动，只要别的客户端连接上它就可以，可以多个beeline客户端<br> hive客户端不支持并发访问，同时起两个塞住了可以用beeline</p>
+</li>
+<li><p>连接</p>
+<p>!connect jdbc:hive2//s201:10000<br>直接连接<br>bin/beeline -u jdbc:hive2://s201:10000 -n root<br>s201是你登录这台机器的主机名字<br>在hive命令模式下可以用  dfs   -put  ….   等命令操作hdfs<br>mysql复制表   create table tt as select * from users ;        //携带数据和表结构<br>mysql复制表   create table tt like users ;            //不带数据，只有表结构<br>hive2.0 以后执行引擎换成了spark</p>
+</li>
+<li><p>脚本化运行</p>
+<p>例如：</p>
+<pre><code>    #!/bin/bash
+    hive -e &quot;select * from db_order.t_order&quot;
+    hive -e &quot;select * from default.t_user&quot;
+    hql=&quot;create table  default.t_bash as select * from db_order.t_order&quot;
+    hive -e &quot;$hql&quot;
+</code></pre><p> hql语句复杂，把hql语句写入一个文件 </p>
+<pre><code>   select * from db_order.t_order;
+   select count(1) from db_order.t_user;
+</code></pre><p>hive -f /root/x.hql</p>
+</li>
+<li><p>建库生成在目录下</p>
+<p>例如：建的是a.db,在指定目录</p>
+<pre><code>hdfs://hdp20-01:9000/user/hive/warehouse/a.db
+</code></pre></li>
+<li><p>建表生成在库目录下</p>
+<p>建表show</p>
+<pre><code>/user/hive/warehouse/db_order.db/show
+</code></pre><p>8.删除表</p>
+</li>
+</ol>
+<pre><code> hive会从元数据库中清除关于这个表的信息；
+ hive还会从hdfs中删除这个表的表目录；
+</code></pre><ol>
+<li><p>内部表与外部表</p>
+<p>内部表(MANAGED_TABLE)：表目录按照hive的规范来部署，位于hive的仓库目录/user/hive/warehouse中</p>
+<pre><code> 外部表(EXTERNAL_TABLE)：表目录由建表用户自己指定
+</code></pre><p> 外部表和内部表的特性差别：</p>
+<pre><code> 内部表目录在hive仓库目录中，外部表的目录由用户自己决定
+ 删除一个内部表时候，hive会清楚它的元数据，并且删除表数据目录（删除表数据也跟着被删除了）
+ 删除一个外部表时候，hive只会清楚元数据而已（ 删除表时数据不删。）
+</code></pre></li>
+<li><p>分区表</p>
+<p>分区表的实质是：在表目录中为数据文件创建分区子目录，以便于在查询时，MR程序可以针对分区子目录中的数据进行</p>
+<pre><code> 处理，缩减读取数据的范围。 
+</code></pre><p> Hive优化手段之一就是建分区表，原理：从目录的层面控制搜索数据的范围<br> 分区字段不能是表中定义的字段</p>
+<p> 排序等操作可以将分区字段当做表字段用<br> 查看表中所有数据不要指定条件</p>
+<p> 分区是一个整体，加入里面是年份和月份分区，他是一个整体，你直接往其中一个下面添加不可<br>以，语法就报错。</p>
+<p> hive不支持非等值的join</p>
+</li>
+<li><p>load</p>
+<p>Load 操作只是单纯的复制/移动操作，将数据文件移动到 Hive 表对应的位置。</p>
+<pre><code> 如果指定了 LOCAL， load 命令会去查找本地文件系统中的 filepath。
+ 如果没有指定 LOCAL 关键字，则根据inpath中的uri
+</code></pre><p>OVERWRITE 关键字</p>
+<p> 如果使用了 OVERWRITE 关键字，则目标表（或者分区）中的内容会被删除，然后再将 filepath 指向的文件/目录中的内<br> 容添加到表/分区中。<br>如果目标表（分区）已经有一个文件，并且文件名和 filepath 中的文件名冲突，那么现有的文件会被新文件所替代。</p>
+<p> ​     </p>
+</li>
+</ol>
+<p>​    </p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2019/05/27/spark总结/" class="prev">&larr; 上一篇 spark</a>
+  
+
+  
+
+  
+    <a href="/2019/05/27/hbase/" class="next">下一篇 hadoop &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by 迟云秋 using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="https://github.com/guduchi/iamge.github.io/blob/master/timg.jpg?raw=true">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/guduchi">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://yunqiublog.top">
+        
+          Weibo
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":100000,"shuffle":true,"count":12};
+var unsplashConfig = {"gravity":"center"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
