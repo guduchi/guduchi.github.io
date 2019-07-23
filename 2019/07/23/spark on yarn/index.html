@@ -16,9 +16,16 @@
   
   
   
-    <meta name="description" content>
+    <meta name="description" content="一.yarn 架构
+
+二.yarn在spark官网的位置
+1.Delpoying 的 yarn
+2.官网位置截图 
+二.spark -submit 提交到yarn
+1.官网提交实例2.自己测试提交改进官网实例
+​    spark-submit \      –class org.apache.spark.examples.SparkPi \      –master yarn \     ...">
   
-  <title>分类 [ yunqiu.blog ]</title>
+  <title>Spark 与 yarn结合 [ yunqiu.blog ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -37,6 +44,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2019/07/17/spark 基础总结/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        SparkRDD
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -76,7 +92,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/categories">分类</a>
             
@@ -108,13 +124,80 @@
     <div id="content-inner">
       
       
-  <article id="page">
+  
+
+  <article id="post">
+    <h1>Spark 与 yarn结合</h1>
+    <p class="page-title-sub">
+      <span id="post-title-date">撰写于 2019-07-23</span>
+      
+        <span id="post-title-updated">修改于 2019-07-23</span>
+      
+      
+      <span id="post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/大数据/">大数据</a>
+      
+      </span>
+      
+      
+      <span id="post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/Spark-On-Hadoop/">Spark On Hadoop</a>
+      
+      </span>
+      
+    </p>
     
-    
-      <h1 class="center-title">分类</h1>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/spark/">spark</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据数据库/">大数据数据库</a><span class="category-list-count">2</span></li></ul>
-    
+    <p>一.yarn 架构</p>
+<p><img src="http://img.blog.itpub.net/blog/2019/07/23/49b7bafc06e8864d.png?x-oss-process=style/bb" alt></p>
+<p>二.yarn在spark官网的位置</p>
+<p>1.Delpoying 的 yarn</p>
+<p>2.官网位置截图<br> <img src="http://img.blog.itpub.net/blog/2019/07/23/e6dc833200068cd2.png?x-oss-process=style/bb" alt></p>
+<p>二.spark -submit 提交到yarn</p>
+<p>1.官网提交实例<br><img src="http://img.blog.itpub.net/blog/2019/07/23/42d925930a7dbe5f.png?x-oss-process=style/bb" alt><br>2.自己测试提交改进官网实例</p>
+<p>​    spark-submit \<br>      –class org.apache.spark.examples.SparkPi \<br>      –master yarn \<br>      /soft/spark/examples/jars/spark-examples_2.11-2.1.1.jar \<br>      3</p>
+<p>​    spark-submit \<br>      –class org.apache.spark.examples.SparkPi \<br>      –master yarn-cluster  \<br>      /soft/spark/examples/jars/spark-examples_2.11-2.1.1.jar \<br>      3</p>
+<p>3.总结：</p>
+<p>   yarn  =  yarn client   单独写yarn  与 deploy-mode 后面写  yarn client  一样</p>
+<p>4.提交可能遇到这个错误</p>
+<p><img src="http://img.blog.itpub.net/blog/2019/07/23/df2e8f3f62704bf5.png?x-oss-process=style/bb" alt><br>5.原因：</p>
+<p>   spark 要用yarn 你得告诉人配置在哪<br>   命令行 export HADOOP_CONF_DIR  等<br>   配置到命令行值当前有效，但是你要配置到spark-env 中可以永久有效</p>
+<p>三.spark-submit 提交到yarn的日志</p>
+<p>1.提交日志的显示<br><img src="http://img.blog.itpub.net/blog/2019/07/23/16402cb920a78f61.png?x-oss-process=style/bb" alt><br>2.流程解释</p>
+<p>    首先把spark的jars包里面的包要全部传上来<br>    配置文件也要放上来<br>    要看这个参数配没配置 spark.yarn.jars nor spark.yarn.archive</p>
+<p>四.spark-submit 提交到yarn加快速度，不用每次都去提交spark的jars</p>
+<p>1.配置参数</p>
+<p>   Neither spark.yarn.jars nor spark.yarn.archive is set,<br>   falling back to uploading libraries under SPARK_HOME.</p>
+<p>2.官网位置</p>
+<p><img src="http://img.blog.itpub.net/blog/2019/07/23/29da24324c61f27f.png?x-oss-process=style/bb" alt></p>
+<p>3.你要配置在spark-defalut.conf中，配置如下</p>
+<p>    首先你要把你的spark中的jars所用jar包传到hdfs上<br>    之后你要spark.yarn.jars = hdfs路径<br>    在提交的时候就不会有提交yarn前面每次都是上传的日志了</p>
+<p>4.对于每次都会有很久的accetped  申请资源的日志，这是正常现象，需要看资源是否满足才给申请</p>
+<p>五.spark-submit 提交到yarn的一些参数</p>
+<p>1.查看参数  spark-submit –help </p>
+<p>2.参数截图<br><img src="http://img.blog.itpub.net/blog/2019/07/23/0f096c10a8fe9d24.png?x-oss-process=style/bb" alt></p>
+<p>3.主要用参数解释</p>
+<p>    –num-executors   默认是有两个-executor<br>    –executor-cores  在yarn中默认每个executor一个core<br>    –executor-memory MEM       Memory per executor (e.g. 1000M, 2G) (Default: 1G). 默认每个executor 内存是1G</p>
+<p>五.yarn面试常问的问题</p>
+<p>1.yarn有什么状态，先经过什么，在经过什么<br>    在yarn8088界面左侧显示<br>    <img src="http://img.blog.itpub.net/blog/2019/07/23/04cb51e1c08f8d0d.png?x-oss-process=style/bb" alt></p>
+
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    
+  </div>
+</div>
 
   
 <nav id="pagination">
@@ -122,6 +205,8 @@
 
   
 
+  
+    <a href="/2019/07/17/spark 基础总结/" class="next">下一篇 SparkRDD &rarr;</a>
   
 </nav>
 
