@@ -1,232 +1,1439 @@
-
-
-
-
-
-
-
-<!doctype html>
-<html lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <meta name="author" content="迟云秋">
+    <link rel="icon" href="/images/favicon.ico">
   
-  
-  
-  
-    <meta name="description" content>
-  
-  <title> [ yunqiu.blog ]</title>
-  
-  
-    <link rel="shortcut icon" href="/hollow.ico">
-  
-  
-  <link rel="stylesheet" href="/css/random.css">
-<link rel="stylesheet" href="/css/vegas.min.css">
-<link rel="stylesheet" href="/css/highlight-railscasts.css">
-<link rel="stylesheet" href="/css/jquery.fancybox.css">
-<link rel="stylesheet" href="/css/iconfont/iconfont.css">
-<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
-<link rel="stylesheet" href="/css/plyr.css">
-  
+  <title>yunqiu.blog</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/lib/jquery.js"></script>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <script src="/js/common.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 </head>
 
-<div class="random-center hide-area">
-  <div id="random-index">
-    <div class="center-field">
-      <img class="avatar" src="https://github.com/guduchi/iamge.github.io/blob/master/timg.jpg?raw=true" width="120" height="120" onclick="openUserCard()">
-    </div>
-    <div class="center-field">
-      <div class="title" onclick="openUserCard()">yunqiu.blog</div>
-      <div class="sub-title" onclick="openUserCard()"></div>
-    </div>
-    <hr>
-    <div class="center-field">
-      <ul class="index-nav-link">
-        
-        
-          
-            <li><a href="/index.html">首页</a></li>
-          
-        
-          
-            <li><a href="/archives">归档</a></li>
-          
-        
-          
-            <li><a href="/tags">标签</a></li>
-          
-        
-          
-            <li><a href="/categories">分类</a></li>
-          
-        
-          
-            <li><a href="/about">介绍</a></li>
-          
-        
-          
-            <li><a href="https://github.com/guduchi">Github</a></li>
-          
-        
-      </ul>
-      <ul class="social-icon">
-  
-  
-    <li>
-      <a href="https://github.com/guduchi">
-        
-          <i class="icon iconfont github">&#xe606;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="https://yunqiublog.top">
-        
-          Weibo
-        
-      </a>
-    </li>
-  
-</ul>
-    </div>
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
   </div>
-</div>
-<div id="user-card">
-  <div class="center-field">
-    <img class="avatar" src="https://github.com/guduchi/iamge.github.io/blob/master/timg.jpg?raw=true">
-    <p id="description"></p>
-    <ul class="social-icon">
-  
-  
-    <li>
-      <a href="https://github.com/guduchi">
-        
-          <i class="icon iconfont github">&#xe606;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="https://yunqiublog.top">
-        
-          Weibo
-        
-      </a>
-    </li>
-  
-</ul>
+  <div class="header-wrapper">
+    <div class="blog-title">
+      
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">yunqiu.blog</a>
+    </div>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="https://github.com/littleee/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
   </div>
+</header>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
+    
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="https://github.com/littleee/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
 </div>
 
+    <main class="main">
+      <div class="content">
+        
 
-<div id="btn-view">Hide</div>
-
-<script>
-// is trigger analytics / tongji script
-var isIgnoreHost = false;
-
-if(window && window.location && window.location.host) {
-  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
-    return 0 === window.location.host.indexOf(address);
-  });
-}
-
-var isTriggerAnalytics = !( true && isIgnoreHost );
-
-</script>
+<section class="banner">
+  <div class="headintro">
+    <p class="title">HELLO, IM CORA</p>
+    <p class="subtitle">三流代码 &amp; 一流Bug</p>
+  </div>
+</section>
 
 
 
-
+<section class="posts">
   
-  
-    <script src="/js/jquery-2.2.3.min.js"></script>
-  
-    <script src="/js/vegas.min.js"></script>
-  
-    <script src="/js/random.js"></script>
-  
-    <script src="/js/highlight.pack.js"></script>
-  
-    <script src="/js/jquery.mousewheel.pack.js"></script>
-  
-    <script src="/js/jquery.fancybox.pack.js"></script>
-  
-    <script src="/js/jquery.fancybox-thumbs.js"></script>
-  
-    <script src="/js/plyr.js"></script>
-  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-07-24</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/07/24/spark的基本算子使用和源码解析/">
+            
+              spark的基本算子使用和源码解析
+            
+          </a>
+          
+            <span class="post-category">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+              
+            </span>
+          
+        
+        <div class="post-tags">
+          
+            <p>Spark</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
 
-<script>
+        
 
-  // fancybox
-  var backgroundImages = [];
+        
+        <h1 id="一-coalesce"><a href="#一-coalesce" class="headerlink" title="一.coalesce"></a>一.coalesce</h1><h3 id="1-coalesce源码"><a href="#1-coalesce源码" class="headerlink" title="1.coalesce源码"></a>1.coalesce源码</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/1e526dbd54909a66.png?x-oss-process=style/bb" alt><br><img src="http://img.blog.itpub.net/blog/2019/07/23/cd7d691657598903.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-coalesce解释"><a href="#2-coalesce解释" class="headerlink" title="2.coalesce解释"></a>2.coalesce解释</h3><pre><code>是窄依赖
+由多变少
+shuffer默认是false，要注意
+</code></pre><h3 id="3-coalesce应用场景"><a href="#3-coalesce应用场景" class="headerlink" title="3.coalesce应用场景"></a>3.coalesce应用场景</h3><pre><code>解决小文件，例如你如果开始有200个文件对应20分区，你极端情况下你过滤变长一个文件，你不能还用200个分区去装吧
+用coalesce解决，主要就是把前面的压缩一下，但是过滤完后你要用coalesce必须实现做预估
+</code></pre><p><img src="http://img.blog.itpub.net/blog/2019/07/23/5a011de8e0ed32d2.png?x-oss-process=style/bb" alt></p>
+<h3 id="4-上述的极端情况"><a href="#4-上述的极端情况" class="headerlink" title="4.上述的极端情况"></a>4.上述的极端情况</h3><pre><code>你如果是xxx.oalesce(1),从源头就是1，不会像mr可以设置reduce的数量
+</code></pre><h3 id="5-注意事项用coalesce-中RDD的不可变性"><a href="#5-注意事项用coalesce-中RDD的不可变性" class="headerlink" title="5.注意事项用coalesce 中RDD的不可变性"></a>5.注意事项用coalesce 中RDD的不可变性</h3><pre><code>下图说述的分区的大小a.partitions.size  你之前没有用变量接收coalesce 的值，是不会变得值
+</code></pre><p><img src="http://img.blog.itpub.net/blog/2019/07/23/4e7b52ee06f17027.png?x-oss-process=style/bb" alt></p>
+<h3 id="6-你传一个参数要小于默认分区才会生效"><a href="#6-你传一个参数要小于默认分区才会生效" class="headerlink" title="6.你传一个参数要小于默认分区才会生效"></a>6.你传一个参数要小于默认分区才会生效</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/0d3fdb4cc2ced2df.png?x-oss-process=style/bb" alt></p>
+<h3 id="7-coalesce设置的参数大于默认的分区数不会生效，前提是一个参数"><a href="#7-coalesce设置的参数大于默认的分区数不会生效，前提是一个参数" class="headerlink" title="7.coalesce设置的参数大于默认的分区数不会生效，前提是一个参数"></a>7.coalesce设置的参数大于默认的分区数不会生效，前提是一个参数</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/5fdbd565288eb781.png?x-oss-process=style/bb" alt></p>
+<h3 id="8-coalesce设置的参数大于默认的分区数生效"><a href="#8-coalesce设置的参数大于默认的分区数生效" class="headerlink" title="8.coalesce设置的参数大于默认的分区数生效"></a>8.coalesce设置的参数大于默认的分区数生效</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/e2677374f8c8ad52.png?x-oss-process=style/bb" alt></p>
+<h3 id="9-此问题对应的源码："><a href="#9-此问题对应的源码：" class="headerlink" title="9.此问题对应的源码："></a>9.此问题对应的源码：</h3><pre><code>note With shuffle = true, you can actually coalesce to a larger number
+一般数不需要第二个参数的
+</code></pre><h1 id="二-repartition"><a href="#二-repartition" class="headerlink" title="二.repartition"></a>二.repartition</h1><h3 id="1-源码："><a href="#1-源码：" class="headerlink" title="1.源码："></a>1.源码：</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/612c7837c737bb0e.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-底层调用的是coalesce，但是传两个参数，允许shuffer"><a href="#2-底层调用的是coalesce，但是传两个参数，允许shuffer" class="headerlink" title="2.底层调用的是coalesce，但是传两个参数，允许shuffer"></a>2.底层调用的是coalesce，但是传两个参数，允许shuffer</h3><h3 id="3-由少变多"><a href="#3-由少变多" class="headerlink" title="3.由少变多"></a>3.由少变多</h3><h3 id="4-repartition与coalesce区别："><a href="#4-repartition与coalesce区别：" class="headerlink" title="4.repartition与coalesce区别："></a>4.repartition与coalesce区别：</h3><pre><code>就是repartition底层调用coalesce两个参数
+</code></pre><h1 id="三-map方法使用"><a href="#三-map方法使用" class="headerlink" title="三.map方法使用"></a>三.map方法使用</h1><h3 id="1-源码"><a href="#1-源码" class="headerlink" title="1.源码"></a>1.源码</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/3034b26cb78d9ea9.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-解释"><a href="#2-解释" class="headerlink" title="2.解释"></a>2.解释</h3><pre><code>每个函数操作的对象是每个元素
+</code></pre><h3 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><pre><code>千万不要用于操作数据库，否则一个元素要拿个connect,太耗费资源
+
+</code></pre><h1 id="四-mapPartitions"><a href="#四-mapPartitions" class="headerlink" title="四.mapPartitions"></a>四.mapPartitions</h1><h3 id="1-源码-1"><a href="#1-源码-1" class="headerlink" title="1.源码"></a>1.源码</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/8eddab26297af8c6.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-解释-1"><a href="#2-解释-1" class="headerlink" title="2.解释"></a>2.解释</h3><pre><code>每个函数作用在每个分区上，多用于操纵数据库，一个分区一个connect
+</code></pre><h1 id="五-foreach-与-foreachPartition"><a href="#五-foreach-与-foreachPartition" class="headerlink" title="五.foreach 与 foreachPartition"></a>五.foreach 与 foreachPartition</h1><h3 id="1-源码-2"><a href="#1-源码-2" class="headerlink" title="1.源码"></a>1.源码</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/888b3ac9aa7ef77d.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-解释-2"><a href="#2-解释-2" class="headerlink" title="2.解释"></a>2.解释</h3><pre><code>一个是打印每个元素，一个是按分区打印，都是action
+</code></pre><h3 id="3-注意事项-1"><a href="#3-注意事项-1" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><pre><code>foreachPartition多用于操作数据库，存储结果
+</code></pre>
+        
+      </div>
+    </article>
   
-  $('#post').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
-      var alt = this.alt || this.title;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'post' + i);
-    });
-  });
-  $(".fancybox").fancybox();
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-07-23</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/07/23/spark on yarn/">
+            
+              Spark 与 yarn结合
+            
+          </a>
+          
+            <span class="post-category">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+              
+            </span>
+          
+        
+        <div class="post-tags">
+          
+            <p>Spark On Hadoop</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
 
-var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":100000,"shuffle":true,"count":12};
-var unsplashConfig = {"gravity":"center"};
-// is show background images
-var turnoffBackgroundImage = false;
+        
 
+        
+        <p>一.yarn 架构</p>
+<p><img src="http://img.blog.itpub.net/blog/2019/07/23/49b7bafc06e8864d.png?x-oss-process=style/bb" alt></p>
+<p>二.yarn在spark官网的位置</p>
+<p>1.Delpoying 的 yarn</p>
+<p>2.官网位置截图<br> <img src="http://img.blog.itpub.net/blog/2019/07/23/e6dc833200068cd2.png?x-oss-process=style/bb" alt></p>
+<p>二.spark -submit 提交到yarn</p>
+<p>1.官网提交实例<br><img src="http://img.blog.itpub.net/blog/2019/07/23/42d925930a7dbe5f.png?x-oss-process=style/bb" alt><br>2.自己测试提交改进官网实例</p>
+<p>​    spark-submit \<br>      –class org.apache.spark.examples.SparkPi \<br>      –master yarn \<br>      /soft/spark/examples/jars/spark-examples_2.11-2.1.1.jar \<br>      3</p>
+<p>​    spark-submit \<br>      –class org.apache.spark.examples.SparkPi \<br>      –master yarn-cluster  \<br>      /soft/spark/examples/jars/spark-examples_2.11-2.1.1.jar \<br>      3</p>
+<p>3.总结：</p>
+<p>   yarn  =  yarn client   单独写yarn  与 deploy-mode 后面写  yarn client  一样</p>
+<p>4.提交可能遇到这个错误</p>
+<p><img src="http://img.blog.itpub.net/blog/2019/07/23/df2e8f3f62704bf5.png?x-oss-process=style/bb" alt><br>5.原因：</p>
+<p>   spark 要用yarn 你得告诉人配置在哪<br>   命令行 export HADOOP_CONF_DIR  等<br>   配置到命令行值当前有效，但是你要配置到spark-env 中可以永久有效</p>
+<p>三.spark-submit 提交到yarn的日志</p>
+<p>1.提交日志的显示<br><img src="http://img.blog.itpub.net/blog/2019/07/23/16402cb920a78f61.png?x-oss-process=style/bb" alt><br>2.流程解释</p>
+<p>    首先把spark的jars包里面的包要全部传上来<br>    配置文件也要放上来<br>    要看这个参数配没配置 spark.yarn.jars nor spark.yarn.archive</p>
+<p>四.spark-submit 提交到yarn加快速度，不用每次都去提交spark的jars</p>
+<p>1.配置参数</p>
+<p>   Neither spark.yarn.jars nor spark.yarn.archive is set,<br>   falling back to uploading libraries under SPARK_HOME.</p>
+<p>2.官网位置</p>
+<p><img src="http://img.blog.itpub.net/blog/2019/07/23/29da24324c61f27f.png?x-oss-process=style/bb" alt></p>
+<p>3.你要配置在spark-defalut.conf中，配置如下</p>
+<p>    首先你要把你的spark中的jars所用jar包传到hdfs上<br>    之后你要spark.yarn.jars = hdfs路径<br>    在提交的时候就不会有提交yarn前面每次都是上传的日志了</p>
+<p>4.对于每次都会有很久的accetped  申请资源的日志，这是正常现象，需要看资源是否满足才给申请</p>
+<p>五.spark-submit 提交到yarn的一些参数</p>
+<p>1.查看参数  spark-submit –help </p>
+<p>2.参数截图<br><img src="http://img.blog.itpub.net/blog/2019/07/23/0f096c10a8fe9d24.png?x-oss-process=style/bb" alt></p>
+<p>3.主要用参数解释</p>
+<p>    –num-executors   默认是有两个-executor<br>    –executor-cores  在yarn中默认每个executor一个core<br>    –executor-memory MEM       Memory per executor (e.g. 1000M, 2G) (Default: 1G). 默认每个executor 内存是1G</p>
+<p>五.yarn面试常问的问题</p>
+<p>1.yarn有什么状态，先经过什么，在经过什么<br>    在yarn8088界面左侧显示<br>    <img src="http://img.blog.itpub.net/blog/2019/07/23/04cb51e1c08f8d0d.png?x-oss-process=style/bb" alt></p>
 
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-07-17</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/07/17/spark 基础总结/">
+            
+              SparkRDD
+            
+          </a>
+          
+            <span class="post-category">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+              
+            </span>
+          
+        
+        <div class="post-tags">
+          
+            <p>SparkRDD</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
 
+        
 
-var backgroundColor = "34495E";
+        
+        <p>IDEA+MAVEN构建spark </p>
+<p>加入scala 插件，加入spark依赖</p>
+<p>官网指南：</p>
+<p>点击步骤：Spark Programming GuideLinking with Spark版本要对应和集群上</p>
+<p>官网位置</p>
+<p><img src="http://pus2juhjw.bkt.clouddn.com/F5FAFD96E45642D4B1260D94A0804751.jpg" alt="image"></p>
+<p>idea 引入cdh版的hadoop等包可能报红线，因为默认idea引的仓库是apache的所以爆红</p>
+<p>把仓库加上就好啦。</p>
+<p><img src="C:/Users/%E4%BA%91%E7%A7%8B/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/9ed69b1136d04684bd8e45616d06cfca/8837e8c5ae194007836f364326325e0d.jpg" alt="img"></p>
+<p>解决：配置仓库</p>
+<p>​    </p>
 
-$(".fancybox-thumb").fancybox({
-  prevEffect: 'none',
-  nextEffect: 'none',
-  helpers: {
-    title: {
-      type: 'outside'
-    },
-    thumbs: {
-      width: 50,
-      height: 50
-    }
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-05-27</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/05/27/spark总结/">
+            
+              spark
+            
+          </a>
+          
+            <span class="post-category">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spark/" itemprop="url" rel="index">
+                    <span itemprop="name">spark</span>
+                  </a>
+                </span>
+              
+            </span>
+          
+        
+        <div class="post-tags">
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <p>概要</p>
+<p>RDD是数据集并不存储数据，他是最基本的抽象，记录一系列的转化关系与位置</p>
+<p>spark不结合分布式文件系统，用本地文件系统只要一个机器没有需要的同样文件就不行</p>
+<p>分布式文件系统不会，尽量用分布式文件系统</p>
+<p>连接spark-shell  是很慢需要建立连接申请资源，等一些列动作</p>
+<p>start-all.sh  先启动配置文件，在启动master，再通过ssh协议启动worker,启动worler又要读配置文</p>
+<p>件。分配的核数不要超过自己的物理存储，你的事几核及线程</p>
+<p>spark2.2.0 值支出hadoop2.6及以上的版本</p>
+<p>spark中间结果能存下来的放入内存中，省着还要HDFS,放不下的放入磁盘中。</p>
+<p>spark只负责计算，并不存储数据</p>
+<p>Spark是MapReduce的替代方案，而且兼容HDFS、Hive，可融入Hadoop的生态系统，以弥补</p>
+<p>MapReduce的不足。</p>
+<p>spark是内存加磁盘，DAG模型比较先进</p>
+<p>MR也有环形缓冲区放入内存，编程模型不怎么先进。</p>
+<p>离线一般有hadoop</p>
+<p>spark有全家桶</p>
+<p>用spark2.2.0用java8，java7已经移除了</p>
+<p>高可用master需要手动启动</p>
+<p>提交任务的客户端要与master保持通信</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/5aae6fb66c8148a2a72dbc8fd7602fbd/spark%E9%AB%98%E5%8F%AF%E7%94%A8%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2.png" alt="img"></p>
+<p>加的参数要在jar包之前，因为是要给submit</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/557f9d0e066f4909b5e60e99f97b44ed/clipboard.png" alt="img"></p>
+<p>执行计算是Coarse…..这个进程，执行完就销毁，释放资源</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/391f39820a31406d8f2b16f7db06c00e/922c6d2b59f847a0bac7507a3cfe9a2d.jpg" alt="img"></p>
+<p>笔记</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/c7a399eb7cba4b58a56b95cbe009c286/2f0872aebee942669758061b48f92933.jpg" alt="img"></p>
+<p>spark任务执行过程简介</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/8cc3c2ea8a6a4eda854c7d7352a3976f/spark%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B.png" alt="img"></p>
+<p>读取本地文件每个worker都应该有你要读的文件，文件中还要有数据否则报错</p>
+<p>提交任务spark-shell  是需要准备资源，启动资源所以很慢,与客户单端建立连接</p>
+<p>启动spark-shell    没有显示在界面？？？？？？？？？？？？？没连接进集群–master</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/42b826d533dd4c5e9e867fc9ef8c84aa/55121c54e5b540b3b2e1ffe5a8e75c6e.jpg" alt="img"></p>
+<p>接上图</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/d14c7f4450554c0bb465772d58aa6e6c/e58e57ab63124e20aac37552322e0fc5.jpg" alt="img"></p>
+<p>spark-core_2.11  2.11代表scla  版本</p>
+<p>spark读写hdfs数据就是用hadoop 的客户端</p>
+<p>hadoop有几个结果文件就是指定几个reducertask</p>
+<p>RDD简介</p>
+<p>RDD的简介(1)</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/ebee48c8e65546b08fb8f75ca4dd38ed/rdd%E7%9A%84%E7%AE%80%E4%BB%8B%281%29.png" alt="img"></p>
+<p>spark中的重要角色</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/f4e8b892541c4b0c801363fc01d12ccd/spark%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E8%A7%92%E8%89%B2.png" alt="img"></p>
+<p>RDD</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/5235267e0baf41228374aff7de155095/1.png" alt="img"></p>
+<p>rdd笔记</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/2dd9e2475b064463b2d39c0fddf52302/abb72a5472b04da884fb4b2e77b08193.jpg" alt="img"></p>
+<p>spark shell</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/bf638602582e44eb9a426095f2fc32dc/179f8c9d169c44dbb58f1b92642d62b1.jpg" alt="img"></p>
+<p>概念</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/c6e7aed9badf47769fe7e457d86a352e/ff9efb6d1842466ab10ab9689e99ae14.jpg" alt="img"></p>
+<p>Rdd属性</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/8ae67b2cbf42432c9acf71c2cee13019/0b57ee75d8da4d58aefc1d10f1ef7676.jpg" alt="img"></p>
+<p>接上图</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/af360bd1deea41d79c5a18a5560b8c95/f40e8e5880a841f2a03356165d9b9ab1.jpg" alt="img"></p>
+<p>创建rdd</p>
+<p>读hdfs文件的时候，里面有几个文件，并且文件很小，并且你没有指定切片，那就可能是四个切</p>
+<p>片。默认切片不读hdfs，切片数就跟核数cores有关了，几个核几个切片，几个切片生成几个文</p>
+<p>件。一般一个task读一个切片</p>
+<p>action执行完不在返回RDD</p>
+<p>默认两个分区2，可以自己设置，一般与你要处理的目录里面的文件有关系</p>
+<p>一个分区可以产生一个task</p>
+<p>常用Transformation</p>
+<p>Rdd算子</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/6b0fab756fa649d78766f9aa47fe7674/7a9617a1dbc049c39288d76e31f21eff.jpg" alt="img"></p>
+<p>join结果：</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/498f5e0b422e43e4b0709f9a65991956/clipboard.png" alt="img"></p>
+<p>aggregate</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/0a9fc59ded6148a08452515fcd9c34ac/6871d2f322f64554aba1977f7fe78a20.jpg" alt="img"></p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/e02562ead69a46a98257453af73a3ead/clipboard.png" alt="img"></p>
+<p>aggregateByKey          是transmantion</p>
+<p>这个100只是在局部时候使用，全局聚合不用与aggregate不同</p>
+<p>aggregate是action</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/838df9081c1f47e78da1b4989ab18b70/c7522435c1a7436cb68868fca1c96d31.jpg" alt="img"></p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/6261e4b27f8a417b8640aeafa9b63c24/2df8ea03fe9349ce9aa5b67848d488a7.jpg" alt="img"></p>
+<p>val rdd5 = sc.parallelize(List(List(“a b c”, “a b b”),List(“e f g”, “a f g”), List(“h i j”, “a a b”)))</p>
+<p>List先转换为Rdd，里面装着(List(“a b c”, “a b b”)等，rdd5.flatmap()是操作第一个Rdd发送打每台</p>
+<p>机器上，rdd5.flatmap(_.flatmap) 里面的flatMap 是操作里面的数据。</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/df0a9be8934e4b36b7a3bcf44c76f3eb/cb9b328dd8664a6f8afe65d5fb3855cc.jpg" alt="img"></p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/856a7f56a22b4f2baf072f08444a46aa/c6d4d0d311b24d87ae74c4d16a28af23.jpg" alt="img"></p>
+<p>如果是左链接，就是左面的一定显示，但右面的不一定</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/bf5d205a610f40708dc7a607cbf5b4e2/30fead27eb4a4d9c94e129218fed3757.jpg" alt="img"></p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/6751a232d6ca4e47b7ab9daddf8d4ade/bec47ebc02054a0dbb5cb56b1ddbd9e3.jpg" alt="img"></p>
+<p>groupByKey 不用参数，效率低，它并不是局部先聚合,而是把相同的发到同一台机器上在进行聚</p>
+<p>合，耗费资源。</p>
+<p>斜分组把rdd1中的相同的key的value先聚合，在吧把rdd2的相同的key的value也聚合</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/1fc95ff191f3493f91b9747f227986bf/65a3a4c0dee74f7596049af786403020.jpg" alt="img"></p>
+<p>mapPartitionsWithIndex</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/b9fe1bc312914a95b7025d7858e4a18a/f90c6ee4cc334bb5bd53d437f3e1ca2e.jpg" alt="img"></p>
+<p>代码：</p>
+<p>mapPartitionsWithIndexval func = (index: Int, iter: Iterator[Int]) =&gt; {  iter.map(x =&gt; “[partID:” +  index + “, val: “ + x + “]”)}val rdd1 = sc.parallelize(List(1,2,3,4,5,6,7,8,9), 2)rdd1.mapPartitionsWithIndex(func).collect————————————————————————————————————————————————————————————–aggregatedef func1(index: Int, iter: Iterator[(Int)]) : Iterator[String] = {  iter.map(x =&gt; “[partID:” +  index + “, val: “ + x + “]”)}val rdd1 = sc.parallelize(List(1,2,3,4,5,6,7,8,9), 2)rdd1.mapPartitionsWithIndex(func1).collect</p>
+<p>mapPartitionsWithIndex 一次拿出一个分区（分区中并没有数据，而是记录要读取哪些数据，真正</p>
+<p>生</p>
+<p>成的Task会读取多条数据），并且可以将分区的编号取出来</p>
+<p>功能：取分区中对应的数据时，还可以将分区的编号取出来，这样就可以知道数据是属于哪个分</p>
+<p>区的（哪个区分对应的Task的数据）</p>
+<p>错误</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/dd2ade89907042c1a44a7ac14457a6fc/1783a46012a54c0a9d80421c8b9f07b8.jpg" alt="img"></p>
+<p>同上</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/1b992d618cb0468a98fe0b64f362e0ae/clipboard.png" alt="img"></p>
+<p>同上</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/b7826e2cda9b4238894f941a16d300a2/clipboard.png" alt="img"></p>
+<p>同上</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/d5669dba23d74a689815a8299171ce81/955a2666296f499d95e919113fa0e270.jpg" alt="img"></p>
+<p>解决上面必须设置yarn提交到集群否则默认本地报上面几个错误</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/29e47414c4de496c986e7a98286ba812/c58fec101da24c2a8978c3d2057e6486.jpg" alt="img"></p>
+<p>问题</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/7eab4d8420474293bb1b339f100c476a/3cd6fb9bd8b44a50afe0c7f630f5a495.jpg" alt="img"></p>
+<p>解决</p>
+<p>yarn.site.xml 添加</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/280b570a78284b43a46c8f9b9708a8ad/21c10d8abb0c428aa2bfe3052fa3c795.jpg" alt="img"></p>
+<p>错误：一直卡在这，还有spark中报yarn什么的就是没配的原因</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/df5d828e22b842d298e0c3e2c925e4c0/6a19c371bb514dbba1cfc36eabe4f6f0.jpg" alt="img"></p>
+<p>解决把export HADOOP_CONF_DIR=/opt/hadoop-2.7.3/etc/hadoop  hadoop的配置文件配到</p>
+<p>spark-env.sh就好啦。</p>
+<p>未解决：？？？？？？？？？？？？？？？？？？？？？ 计算时候</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/89d24ebab19b45119d6c49039a5f722a/92ffd7b2b95649eb840562308601816f.jpg" alt="img"></p>
+<p>注意：</p>
+<p>内存配置，yarn配置，看日志是否报错，有的时候起来正常但是在报错，所以可能计算不了</p>
+<p>未解决？？？？？？？？？？？？？？？？？？？提交计算</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/d0d05fcbaa5842c4b43e166060dcfc47/6975fb38cfda4bdeaa82acb377c2a863.jpg" alt="img"></p>
+<p>错误</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/42596af3659449859f3fb7cfa1159a06/7b00d0b4f6644da6a79051250ddb4b93.jpg" alt="img"></p>
+<p>mapPartitionsWithIndex 带有分区标号，除了记录数据属于哪个分区，每个分区有标号</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/6c74915b57154f68844505074b7b6448/d21595b2959142069162ec3b2a826324.jpg" alt="img"></p>
+<p>aggregate 现在每个分区局部聚合，在把全局分区的所有在聚合，全局聚合</p>
+<p>取每个分区最大的，在多个分区聚合（0）初始值</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/8d7da6dbd8224c16bec18f9f2e3202f9/b1beaf9453274fba918e2d19c2a18fdb.jpg" alt="img"></p>
+<p>val rdd1 = sc.parallelize(List(1,2,3,4,5,6,7,8,9), 2)</p>
+<p>第一个分区 1,2,3,4   第二个分区  5,6,7,8,9？？？？？？？？</p>
+<p>习题 19</p>
+<p>初始值5应用到局部在全局聚合页应用，5 + 9 + 5</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/36d478362b374ac4bea8e779c9ea32d2/ad3834a603b04369b2a319f473ce4d16.jpg" alt="img"></p>
+<p>  2 + 4 + “”</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/c5581a7d3ecb44e2bef19c2be0ea48e8/f88c58a7a46a4601ac7686a1be3cc4dd.jpg" alt="img"></p>
+<p>“”  与 12 比变成 0 最小在转为字符串“0” 长度为1   下个分区为 0 ，转字符串为 0 长度为0</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/41da8056ea054ea5ad511721210a39b5/59cb14d9520a47a696e6c146d6668551.jpg" alt="img"></p>
+<p>1 + 1</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/27e39b6bfe9a44c498cbb7e9a391a3c3/1e19d58d06904861a8dbdbc8b9ba5824.jpg" alt="img"></p>
+<p>aggregateByKey  key相同的先局部在全局，但是初始值只在局部有用</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/4fd23f37852e41deab356fa6ec74b4e8/6787c1fbe80d430cb372f76d490319b3.jpg" alt="img"></p>
+<p>代码：</p>
+<p>aggregatedef func1(index: Int, iter: Iterator[(Int)]) : Iterator[String] = {  iter.map(x =&gt; “[partID:” +  index + “, val: “ + x + “]”)}val rdd1 = sc.parallelize(List(1,2,3,4,5,6,7,8,9), 2)rdd1.mapPartitionsWithIndex(func1).collect先分区内局部聚合在进行全局聚合 aggregaterdd1.aggregate(0)(math.max(_, _), _ + <em>) 现在每个分区取出最大值，在将每一个分区的结果进行叠加，全局叠加也会应用初始值rdd1.aggregate(5)(math.max(</em>, _), _ + <em>)val rdd2 = sc.parallelize(List(“a”,”b”,”c”,”d”,”e”,”f”),2)def func2(index: Int, iter: Iterator[(String)]) : Iterator[String] = {  iter.toList.map(x =&gt; “[partID:” +  index + “, val: “ + x + “]”).iterator}先每个分区在，全局所有分区结果聚合rdd2.aggregate(“”)(</em> + _, _ + <em>)rdd2.aggregate(“=”)(</em> + _, _ + <em>)val rdd3 = sc.parallelize(List(“12”,”23”,”345”,”4567”),2)rdd3.aggregate(“”)((x,y) =&gt; math.max(x.length, y.length).toString, (x,y) =&gt; x + y)val rdd4 = sc.parallelize(List(“12”,”23”,”345”,””),2)rdd4.aggregate(“”)((x,y) =&gt; math.min(x.length, y.length).toString, (x,y) =&gt; x + y)val rdd5 = sc.parallelize(List(“12”,”23”,””,”345”),2)rdd5.aggregate(“”)((x,y) =&gt; math.min(x.length, y.length).toString, (x,y) =&gt; x + y)————————————————————————————————————————————————————————————–aggregateByKeyval pairRDD = sc.parallelize(List( (“cat”,2), (“cat”, 5), (“mouse”, 4),(“cat”, 12), (“dog”, 12), (“mouse”, 2)), 2)def func2(index: Int, iter: Iterator[(String, Int)]) : Iterator[String] = {  iter.map(x =&gt; “[partID:” +  index + “, val: “ + x + “]”)}pairRDD.mapPartitionsWithIndex(func2).collectpairRDD.aggregateByKey(0)(math.max(</em>, _), _ + <em>).collect这个100只是在局部时候使用，全局聚合不用与aggregate不同pairRDD.aggregateByKey(100)(math.max(</em>, _), _ + _).collect</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/2c6f1e67733c410bb12ef296f6e07783/aggregatebykey.png" alt="img"></p>
+<p>每个分区先取最大的在聚合，cat 100 cat 100  初始值是100 留最大的 cat 100 一个</p>
+<p>先让初始值比较出最大的，把最大的拿出来，每个分区里每个key最大的，同一个key页拿出最大</p>
+<p>的。</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/cfc399390f264e9cbdcbef711b03553f/e126e273ec1045cf9c7c38f9462507e5.jpg" alt="img"></p>
+<p>RDD的分区</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/4a51ec23a9e148dab3dc8a5d7e4e98ba/rdd%E7%9A%84%E5%88%86%E5%8C%BA.png" alt="img"></p>
+<p>collect 执行过程</p>
+<p>少量数据可以抽回driver端在放入数据库，多了数据不行，默认driver收集1G</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/385447ddc4b4403babba221f68792b4a/collect.png" alt="img"></p>
+<p>分区，一个分区一个task</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/67c1a032ff8a4d878e3930f4c1412268/64b81d0bc05b408ca2385fb0c11f9203.jpg" alt="img"></p>
+<p>ctrl -  </p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/7e67341d7dde40f899ed364e10492f28/5bb32075be604d52befb2d312ec9abbf.jpg" alt="img"></p>
+<p>countByKey</p>
+<p>countByKey 与value大小无关val rdd1 = sc.parallelize(List((“a”, 1), (“b”, 2), (“b”, 2), (“c”, 2), (“c”, 1)))rdd1.countByKeyrdd1.countByValue————————————————————————————————————————————————————————————–filterByRange对key范围过滤val rdd1 = sc.parallelize(List((“e”, 5), (“c”, 3), (“d”, 4), (“c”, 2), (“a”, 1)))包含边界b,dval rdd2 = rdd1.filterByRange(“b”, “d”)rdd2.colllect————————————————————————————————————————————————————————————–flatMapValuesval a = sc.parallelize(List((“a”, “1 2”), (“b”, “3 4”)))rdd3.flatMapValues(_.split(“ “))</p>
+<p>rdd1.countByKey  按key  技术，与value没关</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/3d8a60523a8c47e9958bf96a5b03ebb2/8339e0f5ec9d44218a11d89c6e2abe35.jpg" alt="img"></p>
+<p>filterByRange  按指定范围过滤</p>
+<p> rdd1.filterByRange(“b”, “d”)  包含b与d</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/2fa2ce00870946bf856630c35af4b22b/db62f63809f34141abe381d32b510263.jpg" alt="img"></p>
+<p>flatMapValues  拼接key与value</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/6b5e6207cf284618a0779c7ac47fe870/8faa8a0293384481a84e331bf4c0d074.jpg" alt="img"></p>
+<p>拉回driver端看变成集合Array()</p>
+<p>foldByKey(“”)(_+<em>),aggregateByKey(“”)(</em>+_,_+<em>),reduceByKey(</em>+_)一个函数用两次达到显示局</p>
+<p>部聚合，再是全局聚合。 combineByKey？？？？？</p>
+<p>四个底层都是调用的combineByKeyWithClassTag，聚合操作调用</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/06747873b08c4829927ee30fe32a13eb/60d37a0a5efa4a41bdb340cf0020c899.jpg" alt="img"></p>
+<p>foreach 可能没有，取对应的task去看，取对应的目录，在executor端执行</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/582cd0cc82bc457c898062064d674ad5/dddc688617704c36ac342ae7ac935d6a.jpg" alt="img"></p>
+<p>分区使用</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/86213f5f4fac481ea06fb1ab47b147ca/2617447be01c4f4fa532368c77698926.jpg" alt="img"></p>
+<p>代码：</p>
+<p>foreachPartitionval rdd1 = sc.parallelize(List(1, 2, 3, 4, 5, 6, 7, 8, 9), 3)rdd1.foreachPartition(x =&gt; println(x.reduce(_ + _)))解释：it是每个分区是个迭代器，x是每个分区里的记录rdd1.foreachPartition(it =&gt; it.foreach(x=&gt;println(x)))</p>
+<p>RDD 的五个特征</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/bf16b6a67fc440faafad372d000551e9/f60d73b1ab524efcb6829dea4c57ba28.jpg" alt="img"></p>
+<p>RDD是把执行的都一起拿过来，最后执行的一块不会一个个执行。</p>
+<p>RDD抽象</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/33206feca5ee4af4b6f3dedee9fe7243/rdd%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AF%B4%E6%98%8E.png" alt="img"></p>
+<p>combineByKey（三个函数） 第一个函数拿数据，第二个局部，第三个全局聚合</p>
+<p>先将每个值放入list中，在把局部聚合后的值放入list中，最后全局聚合合并</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/014aa13cff2140b580c84235dc531a88/combinebykey.png" alt="img"></p>
+<p>combineByKey 不是很了解？？？？？？？？？？？</p>
+<p>foreach（） 是一条条拿，foreachPartition() 是一个个分区拿</p>
+<p>foreach，foreachPartition应用场景：例如把计算好的数据写入数据库中，但是foreach没拿一条就</p>
+<p>创建一个连接，foreachPartition可以一个分区对应一个链接，任务执行是在executor,除非收集到</p>
+<p>driver端。有的如count,take,top这些结果会收集到driver端，主要收集来的数据不多。</p>
+<p>多台机器拉取数据需要shuffler</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/8bb268bcb33f42d7bf1f3a0d76c308c4/c2a9e99df8944165805f74600fff20a5.jpg" alt="img"></p>
+<p>必须指定类型（-+-）不可以</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/8f3ec3d836f8464485a014d02b19d41c/ed2e6e7779524c96a3fb1bc9443bf214.jpg" alt="img"></p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/466e439293074211a81e3c093cb99b37/fa257fecb15e4bed816bc44ae9233966.jpg" alt="img"></p>
+<p>不改变分区数量，上一个RDD多少分区下一个就多少分区，但是你改变了就变了</p>
+<p>sortby() 全局排，也可以组内排（集合）</p>
+<p>toLIST() 放内存中数据太大需要考虑，少量的数据可以</p>
+<p>分区与分区器有区别的</p>
+<p>分区器的作用：决定上游的数据到下游的哪个分区</p>
+<p>上游写完了回去driver汇报，上游去拉取额时候也去driver</p>
+<p>自定义分区器:</p>
+<p>读来的数据最好过滤下在进行缓存</p>
+<p>什么时候做checkpoint    1.迭代计算，要求保证数据安全    2.对速度要求不高（跟cache到内存进行对比）    3.将中间结果保存到hdfs  启动两个任务，一个计算一个保存防止中间结果丢失，保证迭代计算，防止从头读RDD标记checkpoint 不用记录前面的依赖关系，父RDD,因为已经保证不会丢失步骤：       设置checkpoint目录（分布式文件系统的目录hdfs目录）    经过复杂进行，得到中间结果    将中间结果checkpoint到指定的hdfs目录    后续的计算，就可以使用前面ck的数据了  最好持久化内存中防止相同的数据读两次？ 因为checkpoint会起两个任务，一个计算结果，一个放到hdfs，如果你没放到 内存中，就还会去读取，就是重新读，放到内存中不用读了直接放入hdfs就可以。 以后就把内存中释放，然后以后读hdfs中就可以了 action之前调用</p>
+<p>sc.setCheckpointDir(“hdfs://s201:9000/ck2019”)  自动生成填的目录，没有回生成 。</p>
+<p>代码：action才会触发</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/456c732cfd9f46898be15742ff53e782/9fe6e3b32f0940cb80aeb149530b404c.jpg" alt="img"></p>
+<p>结果：做checkpoint目录</p>
+<p><img src="C:/Users/%E4%B8%80%E5%88%87%E7%9C%8B%E4%BC%BC%E6%98%AF%E8%BF%90%E6%B0%94/AppData/Local/YNote/data/qq00D5989F3F6C2518635DCDFE1E5B8165/7806ddc972554c6bbef6d22b1fdf97d6/3ff8de55eae9409fb6b196dcb23a04c9.jpg" alt="img"></p>
+
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-05-27</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/05/27/spark/">
+            
+              Spark基础
+            
+          </a>
+          
+            <span class="post-category">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+              
+            </span>
+          
+        
+        <div class="post-tags">
+          
+            <p>jQuery</p>
+          
+            <p>表格</p>
+          
+            <p>表单验证</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <p>title ：hive</p>
+<p>hive的基本思想</p>
+<p>hive是基于Hadoop的一个数据仓库工具(离线)，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。<br>    hadoop处理结构化数据的数据仓库<br>    不是关系型数据库，不适合OLTP在线事务处理，例如银行<br>    不适合实时查询和行级更新。<br>    总结：hive具有sql数据库的外表，但应用场景完全不同，hive只适合用来做批量数据统计分析</p>
+<ol>
+<li><p>Hive的特点</p>
+<p>可扩展<br>Hive可以自由的扩展集群的规模，一般情况下不需要重启服务。</p>
+<p>延展性<br> Hive支持用户自定义函数，用户可以根据自己的需求来实现自己的函数。</p>
+<p>容错<br> 良好的容错性，节点出现问题SQL仍可完成执行。</p>
+</li>
+<li><p>启动服务</p>
+<p>nohup bin/hiveserver2 1&gt;/dev/null 2&gt;&amp;1 &amp;    后台启动，只要别的客户端连接上它就可以，可以多个beeline客户端<br> hive客户端不支持并发访问，同时起两个塞住了可以用beeline</p>
+</li>
+<li><p>连接</p>
+<p>!connect jdbc:hive2//s201:10000<br>直接连接<br>bin/beeline -u jdbc:hive2://s201:10000 -n root<br>s201是你登录这台机器的主机名字<br>在hive命令模式下可以用  dfs   -put  ….   等命令操作hdfs<br>mysql复制表   create table tt as select * from users ;        //携带数据和表结构<br>mysql复制表   create table tt like users ;            //不带数据，只有表结构<br>hive2.0 以后执行引擎换成了spark</p>
+</li>
+<li><p>脚本化运行</p>
+<p>例如：</p>
+<pre><code>    #!/bin/bash
+    hive -e &quot;select * from db_order.t_order&quot;
+    hive -e &quot;select * from default.t_user&quot;
+    hql=&quot;create table  default.t_bash as select * from db_order.t_order&quot;
+    hive -e &quot;$hql&quot;
+</code></pre><p> hql语句复杂，把hql语句写入一个文件 </p>
+<pre><code>   select * from db_order.t_order;
+   select count(1) from db_order.t_user;
+</code></pre><p>hive -f /root/x.hql</p>
+</li>
+<li><p>建库生成在目录下</p>
+<p>例如：建的是a.db,在指定目录</p>
+<pre><code>hdfs://hdp20-01:9000/user/hive/warehouse/a.db
+</code></pre></li>
+<li><p>建表生成在库目录下</p>
+<p>建表show</p>
+<pre><code>/user/hive/warehouse/db_order.db/show
+</code></pre><p>8.删除表</p>
+</li>
+</ol>
+<pre><code> hive会从元数据库中清除关于这个表的信息；
+ hive还会从hdfs中删除这个表的表目录；
+</code></pre><ol>
+<li><p>内部表与外部表</p>
+<p>内部表(MANAGED_TABLE)：表目录按照hive的规范来部署，位于hive的仓库目录/user/hive/warehouse中</p>
+<pre><code> 外部表(EXTERNAL_TABLE)：表目录由建表用户自己指定
+</code></pre><p> 外部表和内部表的特性差别：</p>
+<pre><code> 内部表目录在hive仓库目录中，外部表的目录由用户自己决定
+ 删除一个内部表时候，hive会清楚它的元数据，并且删除表数据目录（删除表数据也跟着被删除了）
+ 删除一个外部表时候，hive只会清楚元数据而已（ 删除表时数据不删。）
+</code></pre></li>
+<li><p>分区表</p>
+<p>分区表的实质是：在表目录中为数据文件创建分区子目录，以便于在查询时，MR程序可以针对分区子目录中的数据进行</p>
+<pre><code> 处理，缩减读取数据的范围。 
+</code></pre><p> Hive优化手段之一就是建分区表，原理：从目录的层面控制搜索数据的范围<br> 分区字段不能是表中定义的字段</p>
+<p> 排序等操作可以将分区字段当做表字段用<br> 查看表中所有数据不要指定条件</p>
+<p> 分区是一个整体，加入里面是年份和月份分区，他是一个整体，你直接往其中一个下面添加不可<br>以，语法就报错。</p>
+<p> hive不支持非等值的join</p>
+</li>
+<li><p>load</p>
+<p>Load 操作只是单纯的复制/移动操作，将数据文件移动到 Hive 表对应的位置。</p>
+<pre><code> 如果指定了 LOCAL， load 命令会去查找本地文件系统中的 filepath。
+ 如果没有指定 LOCAL 关键字，则根据inpath中的uri
+</code></pre><p>OVERWRITE 关键字</p>
+<p> 如果使用了 OVERWRITE 关键字，则目标表（或者分区）中的内容会被删除，然后再将 filepath 指向的文件/目录中的内<br> 容添加到表/分区中。<br>如果目标表（分区）已经有一个文件，并且文件名和 filepath 中的文件名冲突，那么现有的文件会被新文件所替代。</p>
+<p> ​     </p>
+</li>
+</ol>
+<p>​    </p>
+
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-05-27</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/05/27/hbase/">
+            
+              hadoop
+            
+          </a>
+          
+            <span class="post-category">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+              
+            </span>
+          
+        
+        <div class="post-tags">
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <p>sssss</p>
+<p>ssssssssssssssssssssssssss</p>
+<p>哈德dddddd</p>
+
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-05-27</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/05/27/Hadoop/">
+            
+              hadoop
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <p>sssss</p>
+<p>ssssssssssssssssssssssssss</p>
+<p>哈德dddddd</p>
+
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-05-27</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/05/27/hello-world/">
+            
+              Hello World
+            
+          </a>
+          
+        
+        <div class="post-tags">
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-03-09</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/03/09/hbase学习总结/">
+            
+              hbase学习总结 
+            
+          </a>
+          
+            <span class="post-category">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据数据库</span>
+                  </a>
+                </span>
+              
+            </span>
+          
+        
+        <div class="post-tags">
+          
+            <p>hbase</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <p>一 .基础整理</p>
+<ol>
+<li><p>服务器本身不存储数据，数据本身放在HDFS中的，服务器只做功能的进行查，删改等功能</p>
+</li>
+<li><p>Hive hbase mysql 区别</p>
+<pre><code>
+{% asset_img 各种数据库之间的差别比较.png 这是一个新的博客的图片的说明 %}
+</code></pre></li>
+<li><p>服务器本身不存储数据，数据本身放在HDFS中的，服务器只做功能的进行查，删改等功能</p>
+</li>
+<li><p>Hbase特性<br><img src="https://img-blog.csdnimg.cn/2019022621122517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoYW5nZW15YWxs,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>16010  对外访问端口</p>
+</li>
+<li><p>HBASE是一个数据库—-可以提供数据的实时随机读写</p>
+</li>
+<li><p>Hbase：</p>
+<ul>
+<li>hadoop数据库，分布式可伸缩大型数据存储。</li>
+<li>用户对随机、实时读写数据。</li>
+<li>十亿行 x 百万列。</li>
+<li>版本化、非关系型数据库。</li>
+</ul>
+</li>
+<li><p>hbase存储机制：面向列存储，table是按row排序。</p>
+</li>
+<li><p>Hbase的表没有固定的字段定义</p>
+<ul>
+<li>Hbase的表中每行存储的都是一些key-value对<ul>
+<li>Hbase的表在物理存储上，是按照列族来分割的，不同列族的数据一定存储在不同的文件中</li>
+<li>Hbase的表中的每一行都固定有一个行键，而且每一行的行键在表中不能重复</li>
+<li>Hbase中的数据，包含行键，包含key，包含value，都是byte[ ]类型，hbase不负责为用户维护数据类型</li>
+<li>HBASE对事务的支持很差</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>特征：</p>
+<ul>
+<li>Hbase的表数据存储在HDFS文件系统中</li>
+<li>存储容量可以线性扩展</li>
+<li>数据存储的安全性可靠性极高</li>
+<li>对于为空(null)的列，并不占用存储空间，因此，表可以设计的非常稀疏。</li>
+<li>主要用来存储结构化和半结构化的松散数据</li>
+<li>Hbase查询数据功能很简单，不支持join等复杂操作，不支持复杂的事务（行级的事务）</li>
+<li>与hadoop一样，Hbase目标主要依靠横向扩展，通过不断增加廉价的商用服务器，来增加计算和存储能力。</li>
+</ul>
+</li>
+<li><p>访问hbase table中的行，只有三种方式：</p>
+<ul>
+<li>通过单个row key访问</li>
+<li>通过row key的range</li>
+<li>全表扫描</li>
+</ul>
+</li>
+</ol>
+<p>二 .集群搭建（完全分布式）</p>
+<ol>
+<li>主机安装</li>
+<li>JDK 安装</li>
+<li>hadoop安装</li>
+<li>环境变量</li>
+<li>验证：hbase version</li>
+<li>[hbase/conf/hbase-env.sh]<pre><code>export JAVA_HOME=/soft/jdk
+export HBASE_MANAGES_ZK=false
+</code></pre></li>
+<li>[hbse-site.xml]<pre><code>  &lt;!-- 使用完全分布式 --&gt;
+   &lt;property&gt;
+       &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
+       &lt;value&gt;true&lt;/value&gt;
+   &lt;/property&gt;
+   &lt;!-- 指定hbase数据在hdfs上的存放路径 --&gt;
+   &lt;property&gt;
+       &lt;name&gt;hbase.rootdir&lt;/name&gt;
+       &lt;value&gt;hdfs://s201:8020/hbase&lt;/value&gt;
+   &lt;/property&gt;
+   &lt;!-- 配置zk地址 --&gt;
+   &lt;property&gt;
+       &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
+       &lt;value&gt;s201:2181,s202:2181,s203:2181&lt;/value&gt;
+   &lt;/property&gt;
+   &lt;!-- zk的本地目录 --&gt;
+   &lt;property&gt;
+       &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;
+       &lt;value&gt;/home/centos/zookeeper&lt;/value&gt;
+   &lt;/property&gt;
+</code></pre><ul>
+<li>[hbase/conf/regionservers]<br> 自己按需求设置<br> s202<br> s203<br> s204</li>
+<li>启动hbase集群(s201)<br> start-hbase.sh</li>
+<li>访问<br> <a href="http://s201:16010" target="_blank" rel="noopener">http://s201:16010</a></li>
+<li>启动另一个master<br> hbase-daemon.sh start master</li>
+</ul>
+</li>
+</ol>
+<p>三.使用知识点</p>
+<ol start="8">
+<li>hbase shell 基本操作<ul>
+<li>help    帮助<ul>
+<li>help    ‘list_namespace’            //查看特定的命令帮助<br>   list_namespace                    //列出名字空间(数据库)<br>   list_namespace_tables ‘defalut’    //列出名字空间(数据库)<br>   create ‘ns1:t1’,’f1’                //创建表,指定空间下<br>   put ‘ns1:t1’,’row1’,’f1:id’,100        //插入数据<br>   get ‘ns1:t1’,’row1’                    //查询指定row<br>   scan ‘ns1:t1’                        //扫描表<br>   flush ‘ns1:t1’        //清理内存数据到磁盘。<br>   count ‘ns1:t1’        //统计函数<br>   disable ‘ns1:t1’        //删除表之前需要禁用表</li>
+</ul>
+</li>
+<li>drop ‘ns1:t1’<ul>
+<li>scan ‘hbase:meta’    //查看元数据表<br>   split ‘ns1:t1’        //切割表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>通过编程API访问Hbase</p>
+<ul>
+<li>添加依赖</li>
+<li><dependencies><br>         <dependency><br>             <groupid>org.apache.hbase</groupid><br>             <artifactid>hbase-client</artifactid><br>             <version>1.2.3</version><br>         </dependency><br>     </dependencies></li>
+<li>复制hbase集群的hbase-site.xml文件到模块的src/main/resources目录下</li>
+<li>创建conf对象  Configuration conf = HBaseConfiguration.create();</li>
+<li>通过连接工厂创建连接对象  Connection conn = ConnectionFactory.createConnection(conf);</li>
+<li>通过连接查询tableName对象 TableName tname = TableName.valueOf(“ns1:t1”);</li>
+<li><p>获得table Table table = conn.getTable(tname);</p>
+<pre><code>//创建conf对象
+         Configuration conf = HBaseConfiguration.create();
+         //通过连接工厂创建连接对象
+         Connection conn = ConnectionFactory.createConnection(conf);
+         //通过连接查询tableName对象
+         TableName tname = TableName.valueOf(&quot;ns1:t1&quot;);
+         //获得table
+         Table table = conn.getTable(tname);
+
+         //通过bytes工具类创建字节数组(将字符串)
+         byte[] rowid = Bytes.toBytes(&quot;row3&quot;);
+
+         //创建put对象
+         Put put = new Put(rowid);
+
+         byte[] f1 = Bytes.toBytes(&quot;f1&quot;);
+         byte[] id = Bytes.toBytes(&quot;id&quot;) ;
+         byte[] value = Bytes.toBytes(102);
+         put.addColumn(f1,id,value);
+
+         //执行插入
+         table.put(put);
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<pre><code>//创建conf对象
+                Configuration conf = HBaseConfiguration.create();
+                //通过连接工厂创建连接对象
+                Connection conn = ConnectionFactory.createConnection(conf);
+                //通过连接查询tableName对象
+                TableName tname = TableName.valueOf(&quot;ns1:t1&quot;);
+                //获得table
+                Table table = conn.getTable(tname);
+
+                //通过bytes工具类创建字节数组(将字符串)
+                byte[] rowid = Bytes.toBytes(&quot;row3&quot;);
+                Get get = new Get(Bytes.toBytes(&quot;row3&quot;));
+                Result r = table.get(get);
+                byte[] idvalue = r.getValue(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;id&quot;));
+                System.out.println(Bytes.toInt(idvalue));
+</code></pre><ol>
+<li><p>Row Key</p>
+<ul>
+<li>与nosql数据库们一样,row key是用来检索记录的主键。访问hbase table中的行，只有三种方式：</li>
+<li>A:通过单个row key访问</li>
+<li>B:通过row key的range</li>
+<li>C:全表扫描</li>
+<li>Row key行键 (Row key)可以是任意字符串(最大长度是 64KB，实际应用中长度一般为 10-100bytes)</li>
+<li>在hbase内部，row key保存为字节数组</li>
+<li>Hbase会对表中的数据按照rowkey排序(字典顺序)</li>
+<li>存储时，数据按照Row key的字典序(byte order)排序存储。</li>
+<li>设计key时，要充分排序存储这个特性，将经常一起读取的行存储放到一起。(位置相关性)</li>
+<li>字典序对int排序 : 注意要位数一样 例如10000  设置规则最好都是一样的如 0001   2000  这样的</li>
+<li>表中的每一行有一个“行键rowkey”，而且行键在表中不能重复</li>
+<li>表中的每一对kv数据称作一个cell，cell就是存储这些数据的一个类似封装对象，所有数据可以通过查询拿到</li>
+<li>cell中的数据是没有类型的，全部是字节码形式存贮。、</li>
+<li>由{row key, column( =<family> + <label>), version} 唯一确定的单元</label></family></li>
+<li>hbase可以对数据存储多个历史版本（历史版本数量都是可配置）</li>
+<li>整张表由于数据量过大，会被横向切分成若干个region（用rowkey范围标识）不同region的数据也存储在不同文件中</li>
+<li>hbase会对插入的数据按顺序存储：首先按行键排序，之后再按同一行里面的kv会按列族排序，再按k排序</li>
+<li>hbase中只支持byte[]   此处的byte[] 包括了： rowkey,key,value,列族名,表名</li>
+<li>hbase三级定位，行键，列，时间戳，列也可以是列族加列</li>
+<li>hbase通过行键区分区域服务器，会切割每部分，每部分都有各自的范围，行键是有序的</li>
+<li>插入到hbase中去的数据，hbase会自动排序存储</li>
+<li>排序规则：  首先看行键，然后看列族名，然后看列（key）名； 按字典顺序</li>
+</ul>
+</li>
+<li><p>列族</p>
+<ul>
+<li>hbase表中的每个列，都归属与某个列族。列族是表的schema的一部分(而列不是)，必须在使用表之前定义。</li>
+<li>列名都以列族作为前缀 例如：space:math 都属于 space这个列族</li>
+<li>访问控制、磁盘和内存的使用统计都是在列族层面进行的。</li>
+<li>列族越多，在取一行数据时所要参与IO、搜寻的文件就越多，所以，如果没有必要，不要设置太多的列族</li>
+</ul>
+</li>
+<li><p>写前日志</p>
+<ul>
+<li>WAL            //write ahead log,写前日志。</li>
+<li>写前日志  WAL  主要是容错用的</li>
+<li>你写数据的时候都会往这个表记录，所以他可能影响插入速度</li>
+<li><p>代码：关闭写前日志可以提高插入速度，因为插入的时候都会往写前日志里记录</p>
+<pre><code>DecimalFormat format2 = new DecimalFormat();
+  format2.applyPattern(&quot;0000&quot;);
+  long start = System.currentTimeMillis() ;
+  Configuration configuration = HBaseConfiguration.create();
+  configuration.set(&quot;hbase.zookeeper.quorum&quot;,&quot;s202:2181,s203:2181,s204:2181&quot;);
+  Connection connection = ConnectionFactory.createConnection(configuration);
+  TableName tableName =TableName.valueOf(&quot;new:t1&quot;);
+  HTable table = (HTable)connection.getTable(tableName);
+  table.setAutoFlush(false);
+  for (int i = 2 ; i &lt;= 10000 ; i ++) {
+        Put put = new Put(Bytes.toBytes(&quot;row&quot; + format2.format(i))) ;
+        //关闭写前日志
+        put.setWriteToWAL(false);
+        put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;id&quot;),Bytes.toBytes(i));
+        put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;name&quot;),Bytes.toBytes(&quot;tom&quot; + i));
+        put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;age&quot;),Bytes.toBytes(i % 100));
+        table.put(put);
+        if ( i % 2000 == 0 ) {
+              table.flushCommits();
+        }
+
   }
-});
+  //不提交丢数据，最后不满足2000的会丢，不是自动提交
+  table.flushCommits();
+  System.out.println(System.currentTimeMillis() - start );
+</code></pre></li>
+</ul>
+</li>
+<li><p>存放位置</p>
+<pre><code> -  相同列族的数据存放在一个文件中
+ -  [表数据的存储目录结构构成]
+ -  hdfs://s201:8020/hbase/data/${名字空间}/${表名}/${区域名称}/${列族名称}/${文件名}
+ -  [WAL目录结构构成]
+ -  hdfs://s201:8020/hbase/WALs/${区域服务器名称,主机名,端口号,时间戳}/
+</code></pre><ol start="5">
+<li>client端交互过程</li>
+</ol>
+<ul>
+<li>hbase集群启动时，master负责分配区域到指定区域服务器。主要是把meta放入区域服务器<ul>
+<li>联系zk，找出meta表所在rs(regionserver)  /hbase/meta-region-server</li>
+<li>定位row key,找到对应region server</li>
+<li>缓存信息在本地。</li>
+<li>联系RegionServer</li>
+<li>HRegionServer负责open HRegion对象，为每个列族创建Store对象，Store包含多个StoreFile实例，</li>
+<li>是对HFile的轻量级封装。每个Store还对应了一个MemStore，用于内存存储数据。</li>
+<li>hbase切割文件配置位置：<property><br>  <name>hbase.hregion.max.filesize</name><br>  <value>10737418240</value><br>  <source>hbase-default.xml<br></property>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Zookeeper 起的作用</p>
+<ul>
+<li>保证任何时候，集群中只有一个master</li>
+<li>存贮所有Region的寻址入口—-root表在哪台服务器上</li>
+<li>实时监控Region Server的状态，将Region server的上线和下线信息实时通知给Master</li>
+<li>存储Hbase的schema,包括有哪些table，每个table有哪些column family</li>
+</ul>
+</li>
+<li><p>Master职责</p>
+<ul>
+<li>为Region server分配region</li>
+<li>负责region server的负载均衡</li>
+<li>发现失效的region server并重新分配其上的region</li>
+<li>HDFS上的垃圾文件回收</li>
+<li>处理schema更新请求</li>
+<li>master仅仅维护者table和region的元数据信息，负载很低。</li>
+</ul>
+</li>
+<li><p>Region Server职责</p>
+<ul>
+<li>Region server维护Master分配给它的region，处理对这些region的IO请求</li>
+<li>Region server负责切分在运行过程中变得过大的region</li>
+<li>client访问hbase上数据的过程并不需要master参与</li>
+<li>寻址访问zookeeper和region server</li>
+<li>数据读写访问regione server</li>
+</ul>
+</li>
+</ol>
+<p>四.整体架构<br><img src="https://img-blog.csdnimg.cn/20190227182711175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoYW5nZW15YWxs,size_16,color_FFFFFF,t_70" alt="1."> </p>
 
-// show video with plyr
-$(".video-container iframe").each(function(i){
-  var url = $(this).attr('src');
-  var id = url.split('/').pop();
-  var plyrContainer = document.createElement('div');
-  plyrContainer.className = 'plyr';
-  var plyrElement = document.createElement('div');
-  plyrElement.dataset.videoId = id;
-  switch(true) {
-    case url.search('youtube.com') >= 0:
-      plyrElement.dataset.type = 'youtube';
-      break;
-    case url.search('vimeo.com') >= 0:
-      plyrElement.dataset.type = 'vimeo';
-      break;
-    default:
-      return;
-  };
-  plyrContainer.appendChild(plyrElement);
-  $(this).parent().html(plyrContainer);
-});
-plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
-</script>
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-03-09</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/03/09/hbase学习总结-1/">
+            
+              hbase学习总结
+            
+          </a>
+          
+            <span class="post-category">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据数据库</span>
+                  </a>
+                </span>
+              
+            </span>
+          
+        
+        <div class="post-tags">
+          
+            <p>hbase</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
 
+        
+
+        
+        <hr>
+<p>一 .基础整理</p>
+<ol>
+<li><p>服务器本身不存储数据，数据本身放在HDFS中的，服务器只做功能的进行查，删改等功能</p>
+</li>
+<li><p>Hive hbase mysql 区别</p>
+<pre><code>{% asset_img 各种数据库之间的差别比较.png 这是一个新的博客的图片的说明 %}
+</code></pre></li>
+<li><p>服务器本身不存储数据，数据本身放在HDFS中的，服务器只做功能的进行查，删改等功能</p>
+</li>
+<li><p>Hbase特性<br><img src="https://img-blog.csdnimg.cn/2019022621122517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoYW5nZW15YWxs,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>16010  对外访问端口</p>
+</li>
+<li><p>HBASE是一个数据库—-可以提供数据的实时随机读写</p>
+</li>
+<li><p>Hbase：</p>
+<ul>
+<li>hadoop数据库，分布式可伸缩大型数据存储。</li>
+<li>用户对随机、实时读写数据。</li>
+<li>十亿行 x 百万列。</li>
+<li>版本化、非关系型数据库。</li>
+</ul>
+</li>
+<li><p>hbase存储机制：面向列存储，table是按row排序。</p>
+</li>
+<li><p>Hbase的表没有固定的字段定义</p>
+<ul>
+<li>Hbase的表中每行存储的都是一些key-value对<ul>
+<li>Hbase的表在物理存储上，是按照列族来分割的，不同列族的数据一定存储在不同的文件中</li>
+<li>Hbase的表中的每一行都固定有一个行键，而且每一行的行键在表中不能重复</li>
+<li>Hbase中的数据，包含行键，包含key，包含value，都是byte[ ]类型，hbase不负责为用户维护数据类型</li>
+<li>HBASE对事务的支持很差</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>特征：</p>
+<ul>
+<li>Hbase的表数据存储在HDFS文件系统中</li>
+<li>存储容量可以线性扩展</li>
+<li>数据存储的安全性可靠性极高</li>
+<li>对于为空(null)的列，并不占用存储空间，因此，表可以设计的非常稀疏。</li>
+<li>主要用来存储结构化和半结构化的松散数据</li>
+<li>Hbase查询数据功能很简单，不支持join等复杂操作，不支持复杂的事务（行级的事务）</li>
+<li>与hadoop一样，Hbase目标主要依靠横向扩展，通过不断增加廉价的商用服务器，来增加计算和存储能力。</li>
+</ul>
+</li>
+<li><p>访问hbase table中的行，只有三种方式：</p>
+<ul>
+<li>通过单个row key访问</li>
+<li>通过row key的range</li>
+<li>全表扫描</li>
+</ul>
+</li>
+</ol>
+<p>二 .集群搭建（完全分布式）</p>
+<ol>
+<li>主机安装</li>
+<li>JDK 安装</li>
+<li>hadoop安装</li>
+<li>环境变量</li>
+<li>验证：hbase version</li>
+<li>[hbase/conf/hbase-env.sh]<pre><code> export JAVA_HOME=/soft/jdk
+ export HBASE_MANAGES_ZK=false
+</code></pre></li>
+<li>[hbse-site.xml]<!-- 使用完全分布式 -->
+<pre><code>    &lt;property&gt;
+        &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
+        &lt;value&gt;true&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;!-- 指定hbase数据在hdfs上的存放路径 --&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.rootdir&lt;/name&gt;
+        &lt;value&gt;hdfs://s201:8020/hbase&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;!-- 配置zk地址 --&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
+        &lt;value&gt;s201:2181,s202:2181,s203:2181&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;!-- zk的本地目录 --&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;
+        &lt;value&gt;/home/centos/zookeeper&lt;/value&gt;
+    &lt;/property&gt;
+</code></pre></li>
+</ol>
+<pre><code>-  [hbase/conf/regionservers]
+     自己按需求设置
+     s202
+     s203
+     s204
+- 启动hbase集群(s201)
+    start-hbase.sh
+- 访问
+    http://s201:16010
+- 启动另一个master
+    hbase-daemon.sh start master
+</code></pre><p>三.使用知识点</p>
+<ol>
+<li>hbase shell 基本操作<ul>
+<li>help    帮助<ul>
+<li>help    ‘list_namespace’            //查看特定的命令帮助<br>list_namespace                    //列出名字空间(数据库)<br> list_namespace_tables ‘defalut’    //列出名字空间(数据库)<br> create ‘ns1:t1’,’f1’                //创建表,指定空间下<br> put ‘ns1:t1’,’row1’,’f1:id’,100        //插入数据<br> get ‘ns1:t1’,’row1’                    //查询指定row<br> scan ‘ns1:t1’                        //扫描表<br> flush ‘ns1:t1’        //清理内存数据到磁盘。<br> count ‘ns1:t1’        //统计函数<br> disable ‘ns1:t1’        //删除表之前需要禁用表</li>
+</ul>
+</li>
+<li>drop ‘ns1:t1’<ul>
+<li>scan ‘hbase:meta’    //查看元数据表<br>split ‘ns1:t1’        //切割表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>通过编程API访问Hbase<ul>
+<li>添加依赖</li>
+<li><dependencies><br><dependency><br>            <groupid>org.apache.hbase</groupid><br>            <artifactid>hbase-client</artifactid><br>            <version>1.2.3</version><br>        </dependency><br>    </dependencies></li>
+<li>复制hbase集群的hbase-site.xml文件到模块的src/main/resources目录下</li>
+<li>创建conf对象  Configuration conf = HBaseConfiguration.create();</li>
+<li>通过连接工厂创建连接对象  Connection conn = ConnectionFactory.createConnection(conf);</li>
+<li>通过连接查询tableName对象 TableName tname = TableName.valueOf(“ns1:t1”);</li>
+<li>获得table Table table = conn.getTable(tname);</li>
+</ul>
+</li>
+</ol>
+<pre><code>//创建conf对象
+                Configuration conf = HBaseConfiguration.create();
+                //通过连接工厂创建连接对象
+                Connection conn = ConnectionFactory.createConnection(conf);
+                //通过连接查询tableName对象
+                TableName tname = TableName.valueOf(&quot;ns1:t1&quot;);
+                //获得table
+                Table table = conn.getTable(tname);
+
+                //通过bytes工具类创建字节数组(将字符串)
+                byte[] rowid = Bytes.toBytes(&quot;row3&quot;);
+
+                //创建put对象
+                Put put = new Put(rowid);
+
+                byte[] f1 = Bytes.toBytes(&quot;f1&quot;);
+                byte[] id = Bytes.toBytes(&quot;id&quot;) ;
+                byte[] value = Bytes.toBytes(102);
+                put.addColumn(f1,id,value);
+
+                //执行插入
+                table.put(put);
+</code></pre><pre><code>//创建conf对象
+                Configuration conf = HBaseConfiguration.create();
+                //通过连接工厂创建连接对象
+                Connection conn = ConnectionFactory.createConnection(conf);
+                //通过连接查询tableName对象
+                TableName tname = TableName.valueOf(&quot;ns1:t1&quot;);
+                //获得table
+                Table table = conn.getTable(tname);
+
+                //通过bytes工具类创建字节数组(将字符串)
+                byte[] rowid = Bytes.toBytes(&quot;row3&quot;);
+                Get get = new Get(Bytes.toBytes(&quot;row3&quot;));
+                Result r = table.get(get);
+                byte[] idvalue = r.getValue(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;id&quot;));
+                System.out.println(Bytes.toInt(idvalue));
+</code></pre><ol>
+<li>Row Key<ul>
+<li>与nosql数据库们一样,row key是用来检索记录的主键。访问hbase table中的行，只有三种方式：</li>
+<li>A:通过单个row key访问</li>
+<li>B:通过row key的range</li>
+<li>C:全表扫描</li>
+<li>Row key行键 (Row key)可以是任意字符串(最大长度是 64KB，实际应用中长度一般为 10-100bytes)</li>
+<li>在hbase内部，row key保存为字节数组</li>
+<li>Hbase会对表中的数据按照rowkey排序(字典顺序)</li>
+<li>存储时，数据按照Row key的字典序(byte order)排序存储。</li>
+<li>设计key时，要充分排序存储这个特性，将经常一起读取的行存储放到一起。(位置相关性)</li>
+<li>字典序对int排序 : 注意要位数一样 例如10000  设置规则最好都是一样的如 0001   2000  这样的</li>
+<li>表中的每一行有一个“行键rowkey”，而且行键在表中不能重复</li>
+<li>表中的每一对kv数据称作一个cell，cell就是存储这些数据的一个类似封装对象，所有数据可以通过查询拿到</li>
+<li>cell中的数据是没有类型的，全部是字节码形式存贮。、</li>
+<li>由{row key, column( =<family> + <label>), version} 唯一确定的单元</label></family></li>
+<li>hbase可以对数据存储多个历史版本（历史版本数量都是可配置）</li>
+<li>整张表由于数据量过大，会被横向切分成若干个region（用rowkey范围标识）不同region的数据也存储在不同文件中</li>
+<li>hbase会对插入的数据按顺序存储：首先按行键排序，之后再按同一行里面的kv会按列族排序，再按k排序</li>
+<li>hbase中只支持byte[]   此处的byte[] 包括了： rowkey,key,value,列族名,表名</li>
+<li>hbase三级定位，行键，列，时间戳，列也可以是列族加列</li>
+<li>hbase通过行键区分区域服务器，会切割每部分，每部分都有各自的范围，行键是有序的</li>
+<li>插入到hbase中去的数据，hbase会自动排序存储</li>
+<li>排序规则：  首先看行键，然后看列族名，然后看列（key）名； 按字典顺序</li>
+</ul>
+</li>
+<li>列族<ul>
+<li>hbase表中的每个列，都归属与某个列族。列族是表的schema的一部分(而列不是)，必须在使用表之前定义。</li>
+<li>列名都以列族作为前缀 例如：space:math 都属于 space这个列族</li>
+<li>访问控制、磁盘和内存的使用统计都是在列族层面进行的。</li>
+<li>列族越多，在取一行数据时所要参与IO、搜寻的文件就越多，所以，如果没有必要，不要设置太多的列族</li>
+</ul>
+</li>
+<li>写前日志<ul>
+<li>WAL            //write ahead log,写前日志。</li>
+<li>写前日志  WAL  主要是容错用的</li>
+<li>你写数据的时候都会往这个表记录，所以他可能影响插入速度</li>
+<li>代码：关闭写前日志可以提高插入速度，因为插入的时候都会往写前日志里记录</li>
+</ul>
+</li>
+</ol>
+<pre><code>DecimalFormat format2 = new DecimalFormat();
+            format2.applyPattern(&quot;0000&quot;);
+            long start = System.currentTimeMillis() ;
+            Configuration configuration = HBaseConfiguration.create();
+            configuration.set(&quot;hbase.zookeeper.quorum&quot;,&quot;s202:2181,s203:2181,s204:2181&quot;);
+            Connection connection = ConnectionFactory.createConnection(configuration);
+            TableName tableName =TableName.valueOf(&quot;new:t1&quot;);
+            HTable table = (HTable)connection.getTable(tableName);
+            table.setAutoFlush(false);
+            for (int i = 2 ; i &lt;= 10000 ; i ++) {
+                  Put put = new Put(Bytes.toBytes(&quot;row&quot; + format2.format(i))) ;
+                  //关闭写前日志
+                  put.setWriteToWAL(false);
+                  put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;id&quot;),Bytes.toBytes(i));
+                  put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;name&quot;),Bytes.toBytes(&quot;tom&quot; + i));
+                  put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;age&quot;),Bytes.toBytes(i % 100));
+                  table.put(put);
+                  if ( i % 2000 == 0 ) {
+                        table.flushCommits();
+                  }
+
+            }
+            //不提交丢数据，最后不满足2000的会丢，不是自动提交
+            table.flushCommits();
+            System.out.println(System.currentTimeMillis() - start );
+</code></pre><ol>
+<li>存放位置<ul>
+<li>相同列族的数据存放在一个文件中<ul>
+<li>[表数据的存储目录结构构成]</li>
+<li>hdfs://s201:8020/hbase/data/${名字空间}/${表名}/${区域名称}/${列族名称}/${文件名}</li>
+<li>[WAL目录结构构成]</li>
+<li>hdfs://s201:8020/hbase/WALs/${区域服务器名称,主机名,端口号,时间戳}/</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>client端交互过程<ul>
+<li>hbase集群启动时，master负责分配区域到指定区域服务器。主要是把meta放入区域服务器</li>
+<li>联系zk，找出meta表所在rs(regionserver)  /hbase/meta-region-server</li>
+<li>定位row key,找到对应region server</li>
+<li>缓存信息在本地。</li>
+<li>联系RegionServer</li>
+<li>HRegionServer负责open HRegion对象，为每个列族创建Store对象，Store包含多个StoreFile实例，</li>
+<li>是对HFile的轻量级封装。每个Store还对应了一个MemStore，用于内存存储数据。</li>
+<li>hbase切割文件配置位置：<property><br>    <name>hbase.hregion.max.filesize</name><br>    <value>10737418240</value><br>    <source>hbase-default.xml<br>  </property></li>
+</ul>
+</li>
+<li>Zookeeper 起的作用<ul>
+<li>保证任何时候，集群中只有一个master</li>
+<li>存贮所有Region的寻址入口—-root表在哪台服务器上</li>
+<li>实时监控Region Server的状态，将Region server的上线和下线信息实时通知给Master</li>
+<li>存储Hbase的schema,包括有哪些table，每个table有哪些column family</li>
+</ul>
+</li>
+<li>Master职责<ul>
+<li>为Region server分配region</li>
+<li>负责region server的负载均衡</li>
+<li>发现失效的region server并重新分配其上的region</li>
+<li>HDFS上的垃圾文件回收</li>
+<li>处理schema更新请求</li>
+<li>master仅仅维护者table和region的元数据信息，负载很低。</li>
+</ul>
+</li>
+<li>Region Server职责<ul>
+<li>Region server维护Master分配给它的region，处理对这些region的IO请求</li>
+<li>Region server负责切分在运行过程中变得过大的region</li>
+<li>client访问hbase上数据的过程并不需要master参与</li>
+<li>寻址访问zookeeper和region server</li>
+<li>数据读写访问regione server</li>
+</ul>
+</li>
+</ol>
+<p>四.整体架构<br><img src="https://img-blog.csdnimg.cn/20190227182711175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoYW5nZW15YWxs,size_16,color_FFFFFF,t_70" alt="1."> </p>
+
+        
+      </div>
+    </article>
+  
+</section>
+
+
+
+      </div>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2017 - 2019</span>
+      
+      <span class="author"><i class="fa fa-user"></i>迟云秋</span>
+    </div>
+    
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
+    
+    
+      <span>|</span> <span>主题 - <a href="https://github.com/littleee/corazon">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
+  </div>
+</div>
+
+    </main>
+  </body>
 </html>
-

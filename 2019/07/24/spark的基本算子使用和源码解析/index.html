@@ -1,0 +1,177 @@
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <title>yunqiu.blog</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/lib/jquery.js"></script>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <script src="/js/common.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
+  </div>
+  <div class="header-wrapper">
+    <div class="blog-title">
+      
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">yunqiu.blog</a>
+    </div>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="https://github.com/littleee/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
+  </div>
+</header>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
+    
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="https://github.com/littleee/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
+</div>
+
+    <main class="main">
+      <div class="content">
+        
+  <article class="post">
+    <div class="post-title">
+      <h2 class="title">spark的基本算子使用和源码解析</h2>
+       
+        <p>Spark</p>
+      
+    </div>
+     <div class="post-meta">
+      <span class="post-time">2019-07-24</span>
+    </div>
+    <div class="post-content">
+      <h1 id="一-coalesce"><a href="#一-coalesce" class="headerlink" title="一.coalesce"></a>一.coalesce</h1><h3 id="1-coalesce源码"><a href="#1-coalesce源码" class="headerlink" title="1.coalesce源码"></a>1.coalesce源码</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/1e526dbd54909a66.png?x-oss-process=style/bb" alt><br><img src="http://img.blog.itpub.net/blog/2019/07/23/cd7d691657598903.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-coalesce解释"><a href="#2-coalesce解释" class="headerlink" title="2.coalesce解释"></a>2.coalesce解释</h3><pre><code>是窄依赖
+由多变少
+shuffer默认是false，要注意
+</code></pre><h3 id="3-coalesce应用场景"><a href="#3-coalesce应用场景" class="headerlink" title="3.coalesce应用场景"></a>3.coalesce应用场景</h3><pre><code>解决小文件，例如你如果开始有200个文件对应20分区，你极端情况下你过滤变长一个文件，你不能还用200个分区去装吧
+用coalesce解决，主要就是把前面的压缩一下，但是过滤完后你要用coalesce必须实现做预估
+</code></pre><p><img src="http://img.blog.itpub.net/blog/2019/07/23/5a011de8e0ed32d2.png?x-oss-process=style/bb" alt></p>
+<h3 id="4-上述的极端情况"><a href="#4-上述的极端情况" class="headerlink" title="4.上述的极端情况"></a>4.上述的极端情况</h3><pre><code>你如果是xxx.oalesce(1),从源头就是1，不会像mr可以设置reduce的数量
+</code></pre><h3 id="5-注意事项用coalesce-中RDD的不可变性"><a href="#5-注意事项用coalesce-中RDD的不可变性" class="headerlink" title="5.注意事项用coalesce 中RDD的不可变性"></a>5.注意事项用coalesce 中RDD的不可变性</h3><pre><code>下图说述的分区的大小a.partitions.size  你之前没有用变量接收coalesce 的值，是不会变得值
+</code></pre><p><img src="http://img.blog.itpub.net/blog/2019/07/23/4e7b52ee06f17027.png?x-oss-process=style/bb" alt></p>
+<h3 id="6-你传一个参数要小于默认分区才会生效"><a href="#6-你传一个参数要小于默认分区才会生效" class="headerlink" title="6.你传一个参数要小于默认分区才会生效"></a>6.你传一个参数要小于默认分区才会生效</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/0d3fdb4cc2ced2df.png?x-oss-process=style/bb" alt></p>
+<h3 id="7-coalesce设置的参数大于默认的分区数不会生效，前提是一个参数"><a href="#7-coalesce设置的参数大于默认的分区数不会生效，前提是一个参数" class="headerlink" title="7.coalesce设置的参数大于默认的分区数不会生效，前提是一个参数"></a>7.coalesce设置的参数大于默认的分区数不会生效，前提是一个参数</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/5fdbd565288eb781.png?x-oss-process=style/bb" alt></p>
+<h3 id="8-coalesce设置的参数大于默认的分区数生效"><a href="#8-coalesce设置的参数大于默认的分区数生效" class="headerlink" title="8.coalesce设置的参数大于默认的分区数生效"></a>8.coalesce设置的参数大于默认的分区数生效</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/e2677374f8c8ad52.png?x-oss-process=style/bb" alt></p>
+<h3 id="9-此问题对应的源码："><a href="#9-此问题对应的源码：" class="headerlink" title="9.此问题对应的源码："></a>9.此问题对应的源码：</h3><pre><code>note With shuffle = true, you can actually coalesce to a larger number
+一般数不需要第二个参数的
+</code></pre><h1 id="二-repartition"><a href="#二-repartition" class="headerlink" title="二.repartition"></a>二.repartition</h1><h3 id="1-源码："><a href="#1-源码：" class="headerlink" title="1.源码："></a>1.源码：</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/612c7837c737bb0e.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-底层调用的是coalesce，但是传两个参数，允许shuffer"><a href="#2-底层调用的是coalesce，但是传两个参数，允许shuffer" class="headerlink" title="2.底层调用的是coalesce，但是传两个参数，允许shuffer"></a>2.底层调用的是coalesce，但是传两个参数，允许shuffer</h3><h3 id="3-由少变多"><a href="#3-由少变多" class="headerlink" title="3.由少变多"></a>3.由少变多</h3><h3 id="4-repartition与coalesce区别："><a href="#4-repartition与coalesce区别：" class="headerlink" title="4.repartition与coalesce区别："></a>4.repartition与coalesce区别：</h3><pre><code>就是repartition底层调用coalesce两个参数
+</code></pre><h1 id="三-map方法使用"><a href="#三-map方法使用" class="headerlink" title="三.map方法使用"></a>三.map方法使用</h1><h3 id="1-源码"><a href="#1-源码" class="headerlink" title="1.源码"></a>1.源码</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/3034b26cb78d9ea9.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-解释"><a href="#2-解释" class="headerlink" title="2.解释"></a>2.解释</h3><pre><code>每个函数操作的对象是每个元素
+</code></pre><h3 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><pre><code>千万不要用于操作数据库，否则一个元素要拿个connect,太耗费资源
+
+</code></pre><h1 id="四-mapPartitions"><a href="#四-mapPartitions" class="headerlink" title="四.mapPartitions"></a>四.mapPartitions</h1><h3 id="1-源码-1"><a href="#1-源码-1" class="headerlink" title="1.源码"></a>1.源码</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/8eddab26297af8c6.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-解释-1"><a href="#2-解释-1" class="headerlink" title="2.解释"></a>2.解释</h3><pre><code>每个函数作用在每个分区上，多用于操纵数据库，一个分区一个connect
+</code></pre><h1 id="五-foreach-与-foreachPartition"><a href="#五-foreach-与-foreachPartition" class="headerlink" title="五.foreach 与 foreachPartition"></a>五.foreach 与 foreachPartition</h1><h3 id="1-源码-2"><a href="#1-源码-2" class="headerlink" title="1.源码"></a>1.源码</h3><p><img src="http://img.blog.itpub.net/blog/2019/07/23/888b3ac9aa7ef77d.png?x-oss-process=style/bb" alt></p>
+<h3 id="2-解释-2"><a href="#2-解释-2" class="headerlink" title="2.解释"></a>2.解释</h3><pre><code>一个是打印每个元素，一个是按分区打印，都是action
+</code></pre><h3 id="3-注意事项-1"><a href="#3-注意事项-1" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><pre><code>foreachPartition多用于操作数据库，存储结果
+</code></pre>
+    </div>
+  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+        <a href="/2019/07/23/spark on yarn/" rel="next" title="Spark 与 yarn结合">
+          <i class="fa fa-chevron-left"></i> Spark 与 yarn结合
+        </a>
+      
+    </div>
+
+    <span class="post-nav-divider"></span>
+
+    <div class="post-nav-prev post-nav-item">
+    
+    </div>
+  </div>
+
+
+
+      </div>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2017 - 2019</span>
+      
+      <span class="author"><i class="fa fa-user"></i>迟云秋</span>
+    </div>
+    
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
+    
+    
+      <span>|</span> <span>主题 - <a href="https://github.com/littleee/corazon">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
+  </div>
+</div>
+
+    </main>
+  </body>
+</html>
