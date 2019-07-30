@@ -866,9 +866,9 @@ shuffer默认是false，要注意
       </div>
       <div class="post-title">
         
-          <a class="post-title-link" href="/2019/03/09/hbase学习总结/">
+          <a class="post-title-link" href="/2019/03/09/hbase学习总结-1/">
             
-              hbase学习总结 
+              hbase学习总结
             
           </a>
           
@@ -897,13 +897,13 @@ shuffer默认是false，要注意
         
 
         
-        <p>一 .基础整理</p>
+        <hr>
+<p>一 .基础整理</p>
 <ol>
 <li><p>服务器本身不存储数据，数据本身放在HDFS中的，服务器只做功能的进行查，删改等功能</p>
 </li>
 <li><p>Hive hbase mysql 区别</p>
-<pre><code>
-{% asset_img 各种数据库之间的差别比较.png 这是一个新的博客的图片的说明 %}
+<pre><code>{% asset_img 各种数据库之间的差别比较.png 这是一个新的博客的图片的说明 %}
 </code></pre></li>
 <li><p>服务器本身不存储数据，数据本身放在HDFS中的，服务器只做功能的进行查，删改等功能</p>
 </li>
@@ -960,86 +960,89 @@ shuffer默认是false，要注意
 <li>hadoop安装</li>
 <li>环境变量</li>
 <li>验证：hbase version</li>
-<li>[hbase/conf/hbase-env.sh]<pre><code>export JAVA_HOME=/soft/jdk
-export HBASE_MANAGES_ZK=false
+<li>[hbase/conf/hbase-env.sh]<pre><code> export JAVA_HOME=/soft/jdk
+ export HBASE_MANAGES_ZK=false
 </code></pre></li>
-<li>[hbse-site.xml]<pre><code>  &lt;!-- 使用完全分布式 --&gt;
-   &lt;property&gt;
-       &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
-       &lt;value&gt;true&lt;/value&gt;
-   &lt;/property&gt;
-   &lt;!-- 指定hbase数据在hdfs上的存放路径 --&gt;
-   &lt;property&gt;
-       &lt;name&gt;hbase.rootdir&lt;/name&gt;
-       &lt;value&gt;hdfs://s201:8020/hbase&lt;/value&gt;
-   &lt;/property&gt;
-   &lt;!-- 配置zk地址 --&gt;
-   &lt;property&gt;
-       &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
-       &lt;value&gt;s201:2181,s202:2181,s203:2181&lt;/value&gt;
-   &lt;/property&gt;
-   &lt;!-- zk的本地目录 --&gt;
-   &lt;property&gt;
-       &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;
-       &lt;value&gt;/home/centos/zookeeper&lt;/value&gt;
-   &lt;/property&gt;
-</code></pre><ul>
-<li>[hbase/conf/regionservers]<br> 自己按需求设置<br> s202<br> s203<br> s204</li>
-<li>启动hbase集群(s201)<br> start-hbase.sh</li>
-<li>访问<br> <a href="http://s201:16010" target="_blank" rel="noopener">http://s201:16010</a></li>
-<li>启动另一个master<br> hbase-daemon.sh start master</li>
-</ul>
-</li>
+<li>[hbse-site.xml]<!-- 使用完全分布式 -->
+<pre><code>    &lt;property&gt;
+        &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
+        &lt;value&gt;true&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;!-- 指定hbase数据在hdfs上的存放路径 --&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.rootdir&lt;/name&gt;
+        &lt;value&gt;hdfs://s201:8020/hbase&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;!-- 配置zk地址 --&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
+        &lt;value&gt;s201:2181,s202:2181,s203:2181&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;!-- zk的本地目录 --&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;
+        &lt;value&gt;/home/centos/zookeeper&lt;/value&gt;
+    &lt;/property&gt;
+</code></pre></li>
 </ol>
-<p>三.使用知识点</p>
-<ol start="8">
+<pre><code>-  [hbase/conf/regionservers]
+     自己按需求设置
+     s202
+     s203
+     s204
+- 启动hbase集群(s201)
+    start-hbase.sh
+- 访问
+    http://s201:16010
+- 启动另一个master
+    hbase-daemon.sh start master
+</code></pre><p>三.使用知识点</p>
+<ol>
 <li>hbase shell 基本操作<ul>
 <li>help    帮助<ul>
-<li>help    ‘list_namespace’            //查看特定的命令帮助<br>   list_namespace                    //列出名字空间(数据库)<br>   list_namespace_tables ‘defalut’    //列出名字空间(数据库)<br>   create ‘ns1:t1’,’f1’                //创建表,指定空间下<br>   put ‘ns1:t1’,’row1’,’f1:id’,100        //插入数据<br>   get ‘ns1:t1’,’row1’                    //查询指定row<br>   scan ‘ns1:t1’                        //扫描表<br>   flush ‘ns1:t1’        //清理内存数据到磁盘。<br>   count ‘ns1:t1’        //统计函数<br>   disable ‘ns1:t1’        //删除表之前需要禁用表</li>
+<li>help    ‘list_namespace’            //查看特定的命令帮助<br>list_namespace                    //列出名字空间(数据库)<br> list_namespace_tables ‘defalut’    //列出名字空间(数据库)<br> create ‘ns1:t1’,’f1’                //创建表,指定空间下<br> put ‘ns1:t1’,’row1’,’f1:id’,100        //插入数据<br> get ‘ns1:t1’,’row1’                    //查询指定row<br> scan ‘ns1:t1’                        //扫描表<br> flush ‘ns1:t1’        //清理内存数据到磁盘。<br> count ‘ns1:t1’        //统计函数<br> disable ‘ns1:t1’        //删除表之前需要禁用表</li>
 </ul>
 </li>
 <li>drop ‘ns1:t1’<ul>
-<li>scan ‘hbase:meta’    //查看元数据表<br>   split ‘ns1:t1’        //切割表</li>
+<li>scan ‘hbase:meta’    //查看元数据表<br>split ‘ns1:t1’        //切割表</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>通过编程API访问Hbase</p>
-<ul>
+<li>通过编程API访问Hbase<ul>
 <li>添加依赖</li>
-<li><dependencies><br>         <dependency><br>             <groupid>org.apache.hbase</groupid><br>             <artifactid>hbase-client</artifactid><br>             <version>1.2.3</version><br>         </dependency><br>     </dependencies></li>
+<li><dependencies><br><dependency><br>            <groupid>org.apache.hbase</groupid><br>            <artifactid>hbase-client</artifactid><br>            <version>1.2.3</version><br>        </dependency><br>    </dependencies></li>
 <li>复制hbase集群的hbase-site.xml文件到模块的src/main/resources目录下</li>
 <li>创建conf对象  Configuration conf = HBaseConfiguration.create();</li>
 <li>通过连接工厂创建连接对象  Connection conn = ConnectionFactory.createConnection(conf);</li>
 <li>通过连接查询tableName对象 TableName tname = TableName.valueOf(“ns1:t1”);</li>
-<li><p>获得table Table table = conn.getTable(tname);</p>
-<pre><code>//创建conf对象
-         Configuration conf = HBaseConfiguration.create();
-         //通过连接工厂创建连接对象
-         Connection conn = ConnectionFactory.createConnection(conf);
-         //通过连接查询tableName对象
-         TableName tname = TableName.valueOf(&quot;ns1:t1&quot;);
-         //获得table
-         Table table = conn.getTable(tname);
-
-         //通过bytes工具类创建字节数组(将字符串)
-         byte[] rowid = Bytes.toBytes(&quot;row3&quot;);
-
-         //创建put对象
-         Put put = new Put(rowid);
-
-         byte[] f1 = Bytes.toBytes(&quot;f1&quot;);
-         byte[] id = Bytes.toBytes(&quot;id&quot;) ;
-         byte[] value = Bytes.toBytes(102);
-         put.addColumn(f1,id,value);
-
-         //执行插入
-         table.put(put);
-</code></pre></li>
+<li>获得table Table table = conn.getTable(tname);</li>
 </ul>
 </li>
 </ol>
 <pre><code>//创建conf对象
+                Configuration conf = HBaseConfiguration.create();
+                //通过连接工厂创建连接对象
+                Connection conn = ConnectionFactory.createConnection(conf);
+                //通过连接查询tableName对象
+                TableName tname = TableName.valueOf(&quot;ns1:t1&quot;);
+                //获得table
+                Table table = conn.getTable(tname);
+
+                //通过bytes工具类创建字节数组(将字符串)
+                byte[] rowid = Bytes.toBytes(&quot;row3&quot;);
+
+                //创建put对象
+                Put put = new Put(rowid);
+
+                byte[] f1 = Bytes.toBytes(&quot;f1&quot;);
+                byte[] id = Bytes.toBytes(&quot;id&quot;) ;
+                byte[] value = Bytes.toBytes(102);
+                put.addColumn(f1,id,value);
+
+                //执行插入
+                table.put(put);
+</code></pre><pre><code>//创建conf对象
                 Configuration conf = HBaseConfiguration.create();
                 //通过连接工厂创建连接对象
                 Connection conn = ConnectionFactory.createConnection(conf);
@@ -1055,8 +1058,7 @@ export HBASE_MANAGES_ZK=false
                 byte[] idvalue = r.getValue(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;id&quot;));
                 System.out.println(Bytes.toInt(idvalue));
 </code></pre><ol>
-<li><p>Row Key</p>
-<ul>
+<li>Row Key<ul>
 <li>与nosql数据库们一样,row key是用来检索记录的主键。访问hbase table中的行，只有三种方式：</li>
 <li>A:通过单个row key访问</li>
 <li>B:通过row key的range</li>
@@ -1081,81 +1083,76 @@ export HBASE_MANAGES_ZK=false
 <li>排序规则：  首先看行键，然后看列族名，然后看列（key）名； 按字典顺序</li>
 </ul>
 </li>
-<li><p>列族</p>
-<ul>
+<li>列族<ul>
 <li>hbase表中的每个列，都归属与某个列族。列族是表的schema的一部分(而列不是)，必须在使用表之前定义。</li>
 <li>列名都以列族作为前缀 例如：space:math 都属于 space这个列族</li>
 <li>访问控制、磁盘和内存的使用统计都是在列族层面进行的。</li>
 <li>列族越多，在取一行数据时所要参与IO、搜寻的文件就越多，所以，如果没有必要，不要设置太多的列族</li>
 </ul>
 </li>
-<li><p>写前日志</p>
-<ul>
+<li>写前日志<ul>
 <li>WAL            //write ahead log,写前日志。</li>
 <li>写前日志  WAL  主要是容错用的</li>
 <li>你写数据的时候都会往这个表记录，所以他可能影响插入速度</li>
-<li><p>代码：关闭写前日志可以提高插入速度，因为插入的时候都会往写前日志里记录</p>
-<pre><code>DecimalFormat format2 = new DecimalFormat();
-  format2.applyPattern(&quot;0000&quot;);
-  long start = System.currentTimeMillis() ;
-  Configuration configuration = HBaseConfiguration.create();
-  configuration.set(&quot;hbase.zookeeper.quorum&quot;,&quot;s202:2181,s203:2181,s204:2181&quot;);
-  Connection connection = ConnectionFactory.createConnection(configuration);
-  TableName tableName =TableName.valueOf(&quot;new:t1&quot;);
-  HTable table = (HTable)connection.getTable(tableName);
-  table.setAutoFlush(false);
-  for (int i = 2 ; i &lt;= 10000 ; i ++) {
-        Put put = new Put(Bytes.toBytes(&quot;row&quot; + format2.format(i))) ;
-        //关闭写前日志
-        put.setWriteToWAL(false);
-        put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;id&quot;),Bytes.toBytes(i));
-        put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;name&quot;),Bytes.toBytes(&quot;tom&quot; + i));
-        put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;age&quot;),Bytes.toBytes(i % 100));
-        table.put(put);
-        if ( i % 2000 == 0 ) {
-              table.flushCommits();
-        }
-
-  }
-  //不提交丢数据，最后不满足2000的会丢，不是自动提交
-  table.flushCommits();
-  System.out.println(System.currentTimeMillis() - start );
-</code></pre></li>
+<li>代码：关闭写前日志可以提高插入速度，因为插入的时候都会往写前日志里记录</li>
 </ul>
 </li>
-<li><p>存放位置</p>
-<pre><code> -  相同列族的数据存放在一个文件中
- -  [表数据的存储目录结构构成]
- -  hdfs://s201:8020/hbase/data/${名字空间}/${表名}/${区域名称}/${列族名称}/${文件名}
- -  [WAL目录结构构成]
- -  hdfs://s201:8020/hbase/WALs/${区域服务器名称,主机名,端口号,时间戳}/
-</code></pre><ol start="5">
-<li>client端交互过程</li>
 </ol>
-<ul>
-<li>hbase集群启动时，master负责分配区域到指定区域服务器。主要是把meta放入区域服务器<ul>
+<pre><code>DecimalFormat format2 = new DecimalFormat();
+            format2.applyPattern(&quot;0000&quot;);
+            long start = System.currentTimeMillis() ;
+            Configuration configuration = HBaseConfiguration.create();
+            configuration.set(&quot;hbase.zookeeper.quorum&quot;,&quot;s202:2181,s203:2181,s204:2181&quot;);
+            Connection connection = ConnectionFactory.createConnection(configuration);
+            TableName tableName =TableName.valueOf(&quot;new:t1&quot;);
+            HTable table = (HTable)connection.getTable(tableName);
+            table.setAutoFlush(false);
+            for (int i = 2 ; i &lt;= 10000 ; i ++) {
+                  Put put = new Put(Bytes.toBytes(&quot;row&quot; + format2.format(i))) ;
+                  //关闭写前日志
+                  put.setWriteToWAL(false);
+                  put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;id&quot;),Bytes.toBytes(i));
+                  put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;name&quot;),Bytes.toBytes(&quot;tom&quot; + i));
+                  put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;age&quot;),Bytes.toBytes(i % 100));
+                  table.put(put);
+                  if ( i % 2000 == 0 ) {
+                        table.flushCommits();
+                  }
+
+            }
+            //不提交丢数据，最后不满足2000的会丢，不是自动提交
+            table.flushCommits();
+            System.out.println(System.currentTimeMillis() - start );
+</code></pre><ol>
+<li>存放位置<ul>
+<li>相同列族的数据存放在一个文件中<ul>
+<li>[表数据的存储目录结构构成]</li>
+<li>hdfs://s201:8020/hbase/data/${名字空间}/${表名}/${区域名称}/${列族名称}/${文件名}</li>
+<li>[WAL目录结构构成]</li>
+<li>hdfs://s201:8020/hbase/WALs/${区域服务器名称,主机名,端口号,时间戳}/</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>client端交互过程<ul>
+<li>hbase集群启动时，master负责分配区域到指定区域服务器。主要是把meta放入区域服务器</li>
 <li>联系zk，找出meta表所在rs(regionserver)  /hbase/meta-region-server</li>
 <li>定位row key,找到对应region server</li>
 <li>缓存信息在本地。</li>
 <li>联系RegionServer</li>
 <li>HRegionServer负责open HRegion对象，为每个列族创建Store对象，Store包含多个StoreFile实例，</li>
 <li>是对HFile的轻量级封装。每个Store还对应了一个MemStore，用于内存存储数据。</li>
-<li>hbase切割文件配置位置：<property><br>  <name>hbase.hregion.max.filesize</name><br>  <value>10737418240</value><br>  <source>hbase-default.xml<br></property>
-</li>
+<li>hbase切割文件配置位置：<property><br>    <name>hbase.hregion.max.filesize</name><br>    <value>10737418240</value><br>    <source>hbase-default.xml<br>  </property></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>Zookeeper 起的作用</p>
-<ul>
+<li>Zookeeper 起的作用<ul>
 <li>保证任何时候，集群中只有一个master</li>
 <li>存贮所有Region的寻址入口—-root表在哪台服务器上</li>
 <li>实时监控Region Server的状态，将Region server的上线和下线信息实时通知给Master</li>
 <li>存储Hbase的schema,包括有哪些table，每个table有哪些column family</li>
 </ul>
 </li>
-<li><p>Master职责</p>
-<ul>
+<li>Master职责<ul>
 <li>为Region server分配region</li>
 <li>负责region server的负载均衡</li>
 <li>发现失效的region server并重新分配其上的region</li>
@@ -1164,8 +1161,7 @@ export HBASE_MANAGES_ZK=false
 <li>master仅仅维护者table和region的元数据信息，负载很低。</li>
 </ul>
 </li>
-<li><p>Region Server职责</p>
-<ul>
+<li>Region Server职责<ul>
 <li>Region server维护Master分配给它的region，处理对这些region的IO请求</li>
 <li>Region server负责切分在运行过程中变得过大的region</li>
 <li>client访问hbase上数据的过程并不需要master参与</li>
