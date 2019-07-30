@@ -1,0 +1,198 @@
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <title>yunqiu.blog</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/lib/jquery.js"></script>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <script src="/js/common.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
+  </div>
+  <div class="header-wrapper">
+    <div class="blog-title">
+      
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">yunqiu.blog</a>
+    </div>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="https://github.com/littleee/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
+  </div>
+</header>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
+    
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="https://github.com/littleee/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
+</div>
+
+    <main class="main">
+      <div class="content">
+        
+  <article class="post">
+    <div class="post-title">
+      <h2 class="title">SparkSQL基础知识总结</h2>
+       
+        <p>Spark</p>
+      
+    </div>
+     <div class="post-meta">
+      <span class="post-time">2019-07-30</span>
+    </div>
+    <div class="post-content">
+      <h1 id="一-SparkSQL架构"><a href="#一-SparkSQL架构" class="headerlink" title="一.SparkSQL架构"></a>一.SparkSQL架构</h1><h2 id="1-架构"><a href="#1-架构" class="headerlink" title="1.架构"></a>1.架构</h2><p><img src="http://img.blog.itpub.net/blog/2019/07/29/c7669873a7fbb048.png?x-oss-process=style/bb" alt></p>
+<h2 id="2-解释"><a href="#2-解释" class="headerlink" title="2.解释"></a>2.解释</h2><pre><code>一个sql 过来 解析成unresolved，只拿出来字段名和表名
+但是不知道字段名和表名在哪个位置
+需要通过Schema 确定表的位置等信息，
+生成逻辑执行计划，Logical,知道数据从哪里来了
+通过一些列优化过滤生成物理执行计划Physical
+最后把物理执行计划放到spark集群上运行
+</code></pre><h2 id="3-样例"><a href="#3-样例" class="headerlink" title="3.样例"></a>3.样例</h2><p><img src="http://img.blog.itpub.net/blog/2019/07/29/3fc1cfc4ee7a8d9a.png?x-oss-process=style/bb" alt></p>
+<h1 id="二-SparkSQL的几点误区"><a href="#二-SparkSQL的几点误区" class="headerlink" title="二.SparkSQL的几点误区"></a>二.SparkSQL的几点误区</h1><pre><code>Spark SQL就是写SQL,这是错误的观点
+Spark SQL不是SQL,超出SQL,因为SQL是其一部分
+Spark SQL 是处理结构化数据的，只是Spark中的一个模块
+Spark SQL 与 Hive on Spark  不是一个东西
+Spark SQL 是spark里面的
+Hive on Spark 的功能是比Spark SQL多的
+Hive on Spark 稳定性不是很好
+</code></pre><h1 id="三-SQL的几个几点注意"><a href="#三-SQL的几个几点注意" class="headerlink" title="三.SQL的几个几点注意"></a>三.SQL的几个几点注意</h1><h2 id="1-SQL注意"><a href="#1-SQL注意" class="headerlink" title="1.SQL注意"></a>1.SQL注意</h2><pre><code>关系数据库集群成本很高，还是有限的
+SQL : schema + file
+使用sql的前提就是有schema ，作用到文件上去
+hive是进程的
+hive2.0 默认引擎是Tez
+Hive on Spark 就是把hive执行引擎改成spark
+</code></pre><h2 id="2-执行引擎"><a href="#2-执行引擎" class="headerlink" title="2.执行引擎"></a>2.执行引擎</h2><pre><code>mr
+spark
+Tez
+</code></pre><h2 id="3-SparkSQL的JOIN"><a href="#3-SparkSQL的JOIN" class="headerlink" title="3.SparkSQL的JOIN"></a>3.SparkSQL的JOIN</h2><pre><code>spark sql 可以跨数据源进行join，例如hdfs与mysql里表内容join
+Spark SQL运行可以不用hive，只要你连接到hive的metastore就可以
+</code></pre><h2 id="3-hive底层的hiveserver2协议走的是thrift"><a href="#3-hive底层的hiveserver2协议走的是thrift" class="headerlink" title="3.hive底层的hiveserver2协议走的是thrift"></a>3.hive底层的hiveserver2协议走的是thrift</h2><pre><code>hiveserver2开启可以用JDBC或者ODBC直接连接
+</code></pre><p><img src="http://img.blog.itpub.net/blog/2019/07/29/7e53f1fcea145719.png?x-oss-process=style/bb" alt></p>
+<h1 id="四-连接Hive的几种方式"><a href="#四-连接Hive的几种方式" class="headerlink" title="四.连接Hive的几种方式"></a>四.连接Hive的几种方式</h1><h2 id="1-三种方式"><a href="#1-三种方式" class="headerlink" title="1.三种方式"></a>1.三种方式</h2><pre><code>spark-sql 与 spark-shell  ，thriftserver
+thriftserver对应hive里面的hiveserver2
+
+</code></pre><h2 id="2-thriftserver连接方式"><a href="#2-thriftserver连接方式" class="headerlink" title="2.thriftserver连接方式"></a>2.thriftserver连接方式</h2><pre><code>./beeline -u jdbc:hive2://localhost:10000 -n root  
+</code></pre><p><img src="http://img.blog.itpub.net/blog/2019/07/29/0b6aea27fc000503.png?x-oss-process=style/bb" alt></p>
+<h2 id="3-thriftserver和spark-sql-spark-shell-的区别在哪？"><a href="#3-thriftserver和spark-sql-spark-shell-的区别在哪？" class="headerlink" title="3.thriftserver和spark-sql,spark-shell  的区别在哪？"></a>3.thriftserver和spark-sql,spark-shell  的区别在哪？</h2><pre><code>spark-shell、spark-sql 都是是一个独立的 spark application，
+启动几个就要几个application，非常耗资源
+
+用thriftserver，无论启动多少个客户端（beeline）连接在一个thriftserver，
+是一个独立的spark application，
+后面不用在重新申请资源。前一个beeline缓存的，下一个beeline也可以用
+
+用thriftserver，可在ui看执行计划，优化有优势
+</code></pre><h2 id="4-注意情况"><a href="#4-注意情况" class="headerlink" title="4.注意情况"></a>4.注意情况</h2><pre><code>这个要起来，要不spark-shell， spark-sql，连接不上，这个跟hive一样
+</code></pre><p><img src="http://img.blog.itpub.net/blog/2019/07/29/f7a922322f158be3.png?x-oss-process=style/bb" alt></p>
+<h2 id="5-可能出错"><a href="#5-可能出错" class="headerlink" title="5.可能出错"></a>5.可能出错</h2><pre><code>spark-shell --master local[2] --jars /soft/hive/lib/mysql-connector-java-8.0.12.jar 这样启动不起来
+你可以试试把mysql-connector-java-8.0.12.jar 放到spark的jars里
+</code></pre><p><img src="http://img.blog.itpub.net/blog/2019/07/29/1faf7cf6eaaffd89.png?x-oss-process=style/bb" alt></p>
+<h2 id="6-解决"><a href="#6-解决" class="headerlink" title="6.解决"></a>6.解决</h2><p><img src="http://img.blog.itpub.net/blog/2019/07/29/a2920b090cd8dc27.png?x-oss-process=style/bb" alt></p>
+
+    </div>
+  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+        <a href="/2019/07/24/spark的基本算子使用和源码解析/" rel="next" title="spark的基本算子使用和源码解析">
+          <i class="fa fa-chevron-left"></i> spark的基本算子使用和源码解析
+        </a>
+      
+    </div>
+
+    <span class="post-nav-divider"></span>
+
+    <div class="post-nav-prev post-nav-item">
+    
+    </div>
+  </div>
+
+
+
+      </div>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2017 - 2019</span>
+      
+      <span class="author"><i class="fa fa-user"></i>迟云秋</span>
+    </div>
+    
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
+    
+    
+      <span>|</span> <span>主题 - <a href="https://github.com/littleee/corazon">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
+  </div>
+</div>
+
+    </main>
+  </body>
+</html>

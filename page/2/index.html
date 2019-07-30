@@ -1,0 +1,455 @@
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+  <title>yunqiu.blog</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/lib/jquery.js"></script>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <script src="/js/common.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+</head>
+
+  <body>
+    <header class="header">
+  <div class="color-bar">
+    <ul>
+      <li class="bar1"></li>
+      <li class="bar2"></li>
+      <li class="bar3"></li>
+      <li class="bar4"></li>
+      <li class="bar5"></li>
+      <li class="bar6"></li>
+    </ul>
+  </div>
+  <div class="header-wrapper">
+    <div class="blog-title">
+      
+        <img class="logo" src="/images/logo.png" alt="logo">
+      
+      <a href="/" class="title">yunqiu.blog</a>
+    </div>
+    <nav class="navbar navbar-menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" id="nav-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+        <ul class="menu menu-pc">
+          
+            <li class="menu-item">
+              <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+            </li>
+          
+            <li class="menu-item">
+              <a href="https://github.com/littleee/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+            </li>
+          
+        </ul>
+    </nav>
+  </div>
+</header>
+<div class="collapse nav-collapse" style="position:fixed;top:59px;" id="bs-example-navbar-collapse-1">
+  <ul class="menu menu-mobile" style="list-style:none">
+    
+      <li class="menu-item">
+        <a href="/" class="menu-item-link"><i class="fa fa-home"></i><span>首页</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/tags/" class="menu-item-link"><i class="fa fa-tags"></i><span>标签</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="/archives/" class="menu-item-link"><i class="fa fa-file"></i><span>归档</span></a>
+      </li>
+    
+      <li class="menu-item">
+        <a href="https://github.com/littleee/" class="menu-item-link"><i class="fa fa-github"></i><span>github</span></a>
+      </li>
+    
+  </ul>
+</div>
+
+    <main class="main">
+      <div class="content">
+        
+
+<section class="banner">
+  <div class="headintro">
+    <p class="title">HELLO, IM CORA</p>
+    <p class="subtitle">三流代码 &amp; 一流Bug</p>
+  </div>
+</section>
+
+
+
+<section class="posts">
+  
+    <article class="post">
+      <div class="post-meta">
+        <span class="post-time">2019-03-09</span>
+      </div>
+      <div class="post-title">
+        
+          <a class="post-title-link" href="/2019/03/09/hbase学习总结-1/">
+            
+              hbase学习总结
+            
+          </a>
+          
+            <span class="post-category">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据数据库</span>
+                  </a>
+                </span>
+              
+            </span>
+          
+        
+        <div class="post-tags">
+          
+            <p>hbase</p>
+          
+        </div>
+      </div>
+      <div class="post-content">
+
+        
+
+        
+        <hr>
+<p>一 .基础整理</p>
+<ol>
+<li><p>服务器本身不存储数据，数据本身放在HDFS中的，服务器只做功能的进行查，删改等功能</p>
+</li>
+<li><p>Hive hbase mysql 区别</p>
+<pre><code>{% asset_img 各种数据库之间的差别比较.png 这是一个新的博客的图片的说明 %}
+</code></pre></li>
+<li><p>服务器本身不存储数据，数据本身放在HDFS中的，服务器只做功能的进行查，删改等功能</p>
+</li>
+<li><p>Hbase特性<br><img src="https://img-blog.csdnimg.cn/2019022621122517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoYW5nZW15YWxs,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>16010  对外访问端口</p>
+</li>
+<li><p>HBASE是一个数据库—-可以提供数据的实时随机读写</p>
+</li>
+<li><p>Hbase：</p>
+<ul>
+<li>hadoop数据库，分布式可伸缩大型数据存储。</li>
+<li>用户对随机、实时读写数据。</li>
+<li>十亿行 x 百万列。</li>
+<li>版本化、非关系型数据库。</li>
+</ul>
+</li>
+<li><p>hbase存储机制：面向列存储，table是按row排序。</p>
+</li>
+<li><p>Hbase的表没有固定的字段定义</p>
+<ul>
+<li>Hbase的表中每行存储的都是一些key-value对<ul>
+<li>Hbase的表在物理存储上，是按照列族来分割的，不同列族的数据一定存储在不同的文件中</li>
+<li>Hbase的表中的每一行都固定有一个行键，而且每一行的行键在表中不能重复</li>
+<li>Hbase中的数据，包含行键，包含key，包含value，都是byte[ ]类型，hbase不负责为用户维护数据类型</li>
+<li>HBASE对事务的支持很差</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>特征：</p>
+<ul>
+<li>Hbase的表数据存储在HDFS文件系统中</li>
+<li>存储容量可以线性扩展</li>
+<li>数据存储的安全性可靠性极高</li>
+<li>对于为空(null)的列，并不占用存储空间，因此，表可以设计的非常稀疏。</li>
+<li>主要用来存储结构化和半结构化的松散数据</li>
+<li>Hbase查询数据功能很简单，不支持join等复杂操作，不支持复杂的事务（行级的事务）</li>
+<li>与hadoop一样，Hbase目标主要依靠横向扩展，通过不断增加廉价的商用服务器，来增加计算和存储能力。</li>
+</ul>
+</li>
+<li><p>访问hbase table中的行，只有三种方式：</p>
+<ul>
+<li>通过单个row key访问</li>
+<li>通过row key的range</li>
+<li>全表扫描</li>
+</ul>
+</li>
+</ol>
+<p>二 .集群搭建（完全分布式）</p>
+<ol>
+<li>主机安装</li>
+<li>JDK 安装</li>
+<li>hadoop安装</li>
+<li>环境变量</li>
+<li>验证：hbase version</li>
+<li>[hbase/conf/hbase-env.sh]<pre><code> export JAVA_HOME=/soft/jdk
+ export HBASE_MANAGES_ZK=false
+</code></pre></li>
+<li>[hbse-site.xml]<!-- 使用完全分布式 -->
+<pre><code>    &lt;property&gt;
+        &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
+        &lt;value&gt;true&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;!-- 指定hbase数据在hdfs上的存放路径 --&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.rootdir&lt;/name&gt;
+        &lt;value&gt;hdfs://s201:8020/hbase&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;!-- 配置zk地址 --&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
+        &lt;value&gt;s201:2181,s202:2181,s203:2181&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;!-- zk的本地目录 --&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;
+        &lt;value&gt;/home/centos/zookeeper&lt;/value&gt;
+    &lt;/property&gt;
+</code></pre></li>
+</ol>
+<pre><code>-  [hbase/conf/regionservers]
+     自己按需求设置
+     s202
+     s203
+     s204
+- 启动hbase集群(s201)
+    start-hbase.sh
+- 访问
+    http://s201:16010
+- 启动另一个master
+    hbase-daemon.sh start master
+</code></pre><p>三.使用知识点</p>
+<ol>
+<li>hbase shell 基本操作<ul>
+<li>help    帮助<ul>
+<li>help    ‘list_namespace’            //查看特定的命令帮助<br>list_namespace                    //列出名字空间(数据库)<br> list_namespace_tables ‘defalut’    //列出名字空间(数据库)<br> create ‘ns1:t1’,’f1’                //创建表,指定空间下<br> put ‘ns1:t1’,’row1’,’f1:id’,100        //插入数据<br> get ‘ns1:t1’,’row1’                    //查询指定row<br> scan ‘ns1:t1’                        //扫描表<br> flush ‘ns1:t1’        //清理内存数据到磁盘。<br> count ‘ns1:t1’        //统计函数<br> disable ‘ns1:t1’        //删除表之前需要禁用表</li>
+</ul>
+</li>
+<li>drop ‘ns1:t1’<ul>
+<li>scan ‘hbase:meta’    //查看元数据表<br>split ‘ns1:t1’        //切割表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>通过编程API访问Hbase<ul>
+<li>添加依赖</li>
+<li><dependencies><br><dependency><br>            <groupid>org.apache.hbase</groupid><br>            <artifactid>hbase-client</artifactid><br>            <version>1.2.3</version><br>        </dependency><br>    </dependencies></li>
+<li>复制hbase集群的hbase-site.xml文件到模块的src/main/resources目录下</li>
+<li>创建conf对象  Configuration conf = HBaseConfiguration.create();</li>
+<li>通过连接工厂创建连接对象  Connection conn = ConnectionFactory.createConnection(conf);</li>
+<li>通过连接查询tableName对象 TableName tname = TableName.valueOf(“ns1:t1”);</li>
+<li>获得table Table table = conn.getTable(tname);</li>
+</ul>
+</li>
+</ol>
+<pre><code>//创建conf对象
+                Configuration conf = HBaseConfiguration.create();
+                //通过连接工厂创建连接对象
+                Connection conn = ConnectionFactory.createConnection(conf);
+                //通过连接查询tableName对象
+                TableName tname = TableName.valueOf(&quot;ns1:t1&quot;);
+                //获得table
+                Table table = conn.getTable(tname);
+
+                //通过bytes工具类创建字节数组(将字符串)
+                byte[] rowid = Bytes.toBytes(&quot;row3&quot;);
+
+                //创建put对象
+                Put put = new Put(rowid);
+
+                byte[] f1 = Bytes.toBytes(&quot;f1&quot;);
+                byte[] id = Bytes.toBytes(&quot;id&quot;) ;
+                byte[] value = Bytes.toBytes(102);
+                put.addColumn(f1,id,value);
+
+                //执行插入
+                table.put(put);
+</code></pre><pre><code>//创建conf对象
+                Configuration conf = HBaseConfiguration.create();
+                //通过连接工厂创建连接对象
+                Connection conn = ConnectionFactory.createConnection(conf);
+                //通过连接查询tableName对象
+                TableName tname = TableName.valueOf(&quot;ns1:t1&quot;);
+                //获得table
+                Table table = conn.getTable(tname);
+
+                //通过bytes工具类创建字节数组(将字符串)
+                byte[] rowid = Bytes.toBytes(&quot;row3&quot;);
+                Get get = new Get(Bytes.toBytes(&quot;row3&quot;));
+                Result r = table.get(get);
+                byte[] idvalue = r.getValue(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;id&quot;));
+                System.out.println(Bytes.toInt(idvalue));
+</code></pre><ol>
+<li>Row Key<ul>
+<li>与nosql数据库们一样,row key是用来检索记录的主键。访问hbase table中的行，只有三种方式：</li>
+<li>A:通过单个row key访问</li>
+<li>B:通过row key的range</li>
+<li>C:全表扫描</li>
+<li>Row key行键 (Row key)可以是任意字符串(最大长度是 64KB，实际应用中长度一般为 10-100bytes)</li>
+<li>在hbase内部，row key保存为字节数组</li>
+<li>Hbase会对表中的数据按照rowkey排序(字典顺序)</li>
+<li>存储时，数据按照Row key的字典序(byte order)排序存储。</li>
+<li>设计key时，要充分排序存储这个特性，将经常一起读取的行存储放到一起。(位置相关性)</li>
+<li>字典序对int排序 : 注意要位数一样 例如10000  设置规则最好都是一样的如 0001   2000  这样的</li>
+<li>表中的每一行有一个“行键rowkey”，而且行键在表中不能重复</li>
+<li>表中的每一对kv数据称作一个cell，cell就是存储这些数据的一个类似封装对象，所有数据可以通过查询拿到</li>
+<li>cell中的数据是没有类型的，全部是字节码形式存贮。、</li>
+<li>由{row key, column( =<family> + <label>), version} 唯一确定的单元</label></family></li>
+<li>hbase可以对数据存储多个历史版本（历史版本数量都是可配置）</li>
+<li>整张表由于数据量过大，会被横向切分成若干个region（用rowkey范围标识）不同region的数据也存储在不同文件中</li>
+<li>hbase会对插入的数据按顺序存储：首先按行键排序，之后再按同一行里面的kv会按列族排序，再按k排序</li>
+<li>hbase中只支持byte[]   此处的byte[] 包括了： rowkey,key,value,列族名,表名</li>
+<li>hbase三级定位，行键，列，时间戳，列也可以是列族加列</li>
+<li>hbase通过行键区分区域服务器，会切割每部分，每部分都有各自的范围，行键是有序的</li>
+<li>插入到hbase中去的数据，hbase会自动排序存储</li>
+<li>排序规则：  首先看行键，然后看列族名，然后看列（key）名； 按字典顺序</li>
+</ul>
+</li>
+<li>列族<ul>
+<li>hbase表中的每个列，都归属与某个列族。列族是表的schema的一部分(而列不是)，必须在使用表之前定义。</li>
+<li>列名都以列族作为前缀 例如：space:math 都属于 space这个列族</li>
+<li>访问控制、磁盘和内存的使用统计都是在列族层面进行的。</li>
+<li>列族越多，在取一行数据时所要参与IO、搜寻的文件就越多，所以，如果没有必要，不要设置太多的列族</li>
+</ul>
+</li>
+<li>写前日志<ul>
+<li>WAL            //write ahead log,写前日志。</li>
+<li>写前日志  WAL  主要是容错用的</li>
+<li>你写数据的时候都会往这个表记录，所以他可能影响插入速度</li>
+<li>代码：关闭写前日志可以提高插入速度，因为插入的时候都会往写前日志里记录</li>
+</ul>
+</li>
+</ol>
+<pre><code>DecimalFormat format2 = new DecimalFormat();
+            format2.applyPattern(&quot;0000&quot;);
+            long start = System.currentTimeMillis() ;
+            Configuration configuration = HBaseConfiguration.create();
+            configuration.set(&quot;hbase.zookeeper.quorum&quot;,&quot;s202:2181,s203:2181,s204:2181&quot;);
+            Connection connection = ConnectionFactory.createConnection(configuration);
+            TableName tableName =TableName.valueOf(&quot;new:t1&quot;);
+            HTable table = (HTable)connection.getTable(tableName);
+            table.setAutoFlush(false);
+            for (int i = 2 ; i &lt;= 10000 ; i ++) {
+                  Put put = new Put(Bytes.toBytes(&quot;row&quot; + format2.format(i))) ;
+                  //关闭写前日志
+                  put.setWriteToWAL(false);
+                  put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;id&quot;),Bytes.toBytes(i));
+                  put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;name&quot;),Bytes.toBytes(&quot;tom&quot; + i));
+                  put.addColumn(Bytes.toBytes(&quot;f1&quot;),Bytes.toBytes(&quot;age&quot;),Bytes.toBytes(i % 100));
+                  table.put(put);
+                  if ( i % 2000 == 0 ) {
+                        table.flushCommits();
+                  }
+
+            }
+            //不提交丢数据，最后不满足2000的会丢，不是自动提交
+            table.flushCommits();
+            System.out.println(System.currentTimeMillis() - start );
+</code></pre><ol>
+<li>存放位置<ul>
+<li>相同列族的数据存放在一个文件中<ul>
+<li>[表数据的存储目录结构构成]</li>
+<li>hdfs://s201:8020/hbase/data/${名字空间}/${表名}/${区域名称}/${列族名称}/${文件名}</li>
+<li>[WAL目录结构构成]</li>
+<li>hdfs://s201:8020/hbase/WALs/${区域服务器名称,主机名,端口号,时间戳}/</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>client端交互过程<ul>
+<li>hbase集群启动时，master负责分配区域到指定区域服务器。主要是把meta放入区域服务器</li>
+<li>联系zk，找出meta表所在rs(regionserver)  /hbase/meta-region-server</li>
+<li>定位row key,找到对应region server</li>
+<li>缓存信息在本地。</li>
+<li>联系RegionServer</li>
+<li>HRegionServer负责open HRegion对象，为每个列族创建Store对象，Store包含多个StoreFile实例，</li>
+<li>是对HFile的轻量级封装。每个Store还对应了一个MemStore，用于内存存储数据。</li>
+<li>hbase切割文件配置位置：<property><br>    <name>hbase.hregion.max.filesize</name><br>    <value>10737418240</value><br>    <source>hbase-default.xml<br>  </property></li>
+</ul>
+</li>
+<li>Zookeeper 起的作用<ul>
+<li>保证任何时候，集群中只有一个master</li>
+<li>存贮所有Region的寻址入口—-root表在哪台服务器上</li>
+<li>实时监控Region Server的状态，将Region server的上线和下线信息实时通知给Master</li>
+<li>存储Hbase的schema,包括有哪些table，每个table有哪些column family</li>
+</ul>
+</li>
+<li>Master职责<ul>
+<li>为Region server分配region</li>
+<li>负责region server的负载均衡</li>
+<li>发现失效的region server并重新分配其上的region</li>
+<li>HDFS上的垃圾文件回收</li>
+<li>处理schema更新请求</li>
+<li>master仅仅维护者table和region的元数据信息，负载很低。</li>
+</ul>
+</li>
+<li>Region Server职责<ul>
+<li>Region server维护Master分配给它的region，处理对这些region的IO请求</li>
+<li>Region server负责切分在运行过程中变得过大的region</li>
+<li>client访问hbase上数据的过程并不需要master参与</li>
+<li>寻址访问zookeeper和region server</li>
+<li>数据读写访问regione server</li>
+</ul>
+</li>
+</ol>
+<p>四.整体架构<br><img src="https://img-blog.csdnimg.cn/20190227182711175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoYW5nZW15YWxs,size_16,color_FFFFFF,t_70" alt="1."> </p>
+
+        
+      </div>
+    </article>
+  
+</section>
+
+  <nav class="page-nav">
+    <a class="extend prev" rel="prev" href="/">Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
+
+      </div>
+        <div class="footer">
+  <div class="footer-wrapper">
+    <div class="copyright">
+      
+      <span>&copy;</span>
+      
+      <span>2017 - 2019</span>
+      
+      <span class="author"><i class="fa fa-user"></i>迟云秋</span>
+    </div>
+    
+      <span>由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</span>
+    
+    
+      <span>|</span> <span>主题 - <a href="https://github.com/littleee/corazon">Corazon</a></span>
+      
+        <span>v1.0.0</span>
+      
+    
+  </div>
+</div>
+
+    </main>
+  </body>
+</html>
